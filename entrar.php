@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,6 @@
         <div class="nav-wrapper">
         <a href="#" class="brand-logo">entrar </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="menu.php">menu</a></li>
             <li><a href="cadastro.php">cadastrar</a></li>
         </ul>
         </div>
@@ -29,6 +28,6 @@
           <label for="password">senha</label>
         </div>
       </div>
-      
+    <a class="btn btn-primary" href="menu.php" role="button">Entrar</a>    
 </body>
 </html>
