@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +12,8 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Menu </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="entrar.php">Entrar</a></li>
-        <li><a href="cadastro.php">cadastrar</a></li>
+        <li><a href="javascript:history.back()">voltar</a></li>
+        <li><a href="carrinho.php">carrinho</a></li>
       </ul>
     </div>
   </nav>
