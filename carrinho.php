@@ -13,7 +13,7 @@
       <a href="#" class="brand-logo">carrinho </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="javascript:history.back()">voltar</a></li>
-        <li><a href="menu.php">menu</a></li>
+        <li><a href="index.php">menu</a></li>
       </ul>
     </div>
   </nav>
