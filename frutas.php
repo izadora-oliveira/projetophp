@@ -12,18 +12,17 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">frutas </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="menu.php">menu</a></li>
+        <li><a href="index.php">menu</a></li>
         <li><a href="carrinho.php">carrinho</a></li>
       </ul>
     </div>
   </nav>
   <img src="imagensdoprojeto\banana.png" width="40" height="40">
-  <p>banana KG</p>
-  <p>R$10</p>
-  <p>
-    <input name="produto" type="text">
-  </p>
-  <button>Comprar</button>
+  <p>banana KG
+  <br>
+  R$10
+  <input name="produto" type="text">
+  <button>Comprar</button></p>  
   <br>
   <img src="imagensdoprojeto\laranja.jpg" width="40" height="40">
   <p>laranja KG</p>
@@ -33,7 +32,7 @@
   </p>
   <button>Comprar</button>
 
-  <br>
+  
   <img src="imagensdoprojeto\manga.jpg" width="40" height="40">
   <p>manga KG</p>
   <p>R$10</p>
