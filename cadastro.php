@@ -16,37 +16,32 @@
         </ul>
         </div>
     </nav>
-    <div class="row">
-    <form class="col s12">
+    <form method="POST" action="cadastrar.php" class="col s12">
       <div class="row">
         <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Nome</label>
+          <input name="nome" id="name" type="text" class="validate">
+          <label for="name">Nome</label>
         </div>
       </div>
-    <div class="row">
+      <div class="row">
         <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
+          <input name="email" id="email" type="email" class="validate">
           <label for="email">Email</label>
         </div>
       </div>
-    <div class="row">
+      <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input name="senha" id="password" type="password" class="validate">
           <label for="password">Senha</label>
         </div>
+      </div>
+      <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">repetir senha</label>
+          <input name="endereco" id="endereço" type="text" class="validate">
+          <label for="endereço">endereço</label>
         </div>
       </div>
-    <div class="row">
-        <div class="input-field col s12">
-            <input id="endereço" type="text" class="validate">
-            <label for="endereço">endereço</label>
-            </div>
-        </div>
-    <a class="btn btn-primary" href="entrar.php" role="button">Cadastrar</a>
-      
+      <button class="btn btn-primary" role="button">Cadastrar</button>
+    </form>
 </body>
 </html>
