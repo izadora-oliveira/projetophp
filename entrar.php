@@ -16,18 +16,24 @@
         </ul>
         </div>
     </nav>
-    <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
+    <!--<form action="login.php">-->
+    <form action="login.php" method="post">
+      <div class="form-group">
+        <input name="email" type="email" class="form-control" placeholder="E-mail">
       </div>
-    <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">senha</label>
-        </div>
+      <div class="form-group">
+        <input name="senha" type="password" class="form-control" placeholder="Senha">
       </div>
-    <a class="btn btn-primary" href="menu.php" role="button">Entrar</a>    
+      <?php if (isset($_GET['login']) &&  $_GET['login'] == 'erro') { ?>
+        <div class="text-danger">
+          Usuário ou senha inválido(s)
+        </div>
+      <?php } ?>
+
+      <button class="waves-effect waves-light btn-large blue lighten-3" type="submit">Entrar</button>
+
+      <!--<button class="btn btn-lg btn-info btn-block blue lighten-3" type="submit">Entrar</button>-->
+    </form>             
+     
 </body>
 </html>
