@@ -8,6 +8,9 @@
   <title>raizes</title>
 </head>
 <body>
+  <?php
+  require_once("autenticar.php")
+  ?>
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">raizes </a>
