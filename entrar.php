@@ -16,24 +16,15 @@
         </ul>
         </div>
     </nav>
-    <!--<form action="login.php">-->
-    <form action="login.php" method="post">
+    <form  action = "login.php" method = "POST">
       <div class="form-group">
-        <input name="email" type="email" class="form-control" placeholder="E-mail">
+        <input name="email" class = 'validate' required = "" type="email" class="form-control" placeholder="E-mail">
       </div>
       <div class="form-group">
-        <input name="senha" type="password" class="form-control" placeholder="Senha">
+        <input name="senha" class = 'validate' required = "" type="password" class="form-control" placeholder="Senha">
       </div>
-      <?php if (isset($_GET['login']) &&  $_GET['login'] == 'erro') { ?>
-        <div class="text-danger">
-          Usuário ou senha inválido(s)
-        </div>
-      <?php } ?>
-
-      <button class="waves-effect waves-light btn-large blue lighten-3" type="submit">Entrar</button>
-
-      <!--<button class="btn btn-lg btn-info btn-block blue lighten-3" type="submit">Entrar</button>-->
+      <button type="submit" class="waves-effect waves-light btn-large blue lighten-3">Entrar</button>
     </form>             
      
 </body>
-</html>
+</html> 
