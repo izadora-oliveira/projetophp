@@ -1,32 +1,22 @@
 <?php
-$usuario_auten = false;
+session_start();
+require("conexao.php");
+$email = $_POST['email'];
+$senha = $_POST['senha'];
+$query_ = "SELECT * FROM usuario WHERE email ='$email' AND senha = '$senha'";
+$result = $conn->query($query_);
 
-// método POST
 
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
-echo '<br/>';
-echo $_POST['email'];
-echo '<br/>';
-echo $_POST['senha'];
-
-//usuários do sistema
-$usuarios = array(
-  array('email' => 'adm@teste.com', 'senha' => '123456'),
-  array('email' => 'user@teste.com', 'senha' => 'abcdef'),
-  array('email' => 'aluna@teste.com', 'senha' => '654321'),
-);
-
-foreach ($usuarios as $user) {
-  if ($user['email'] == $_POST['email'] && $user['senha'] == $_POST['senha']) {
-    $usuario_auten = true;
+if ($result->num_rows > 0) {
+  while ($row = $result->fetch_assoc()) {
+    $_SESSION['authenticated'] = 'YES';
+    header('Location:index.php');
   }
+}else{
+  $_SESSION['autenticado'] = 'N';
+  echo ("<script>
+    window.alert('Usuário ou senha incorretos!')
+    window.location.href='entrar.php?login=erro1';
+    </script>");
 }
-if ($usuario_auten) {
-  echo "Usuário autenticado";
-} else {
-  //echo "Erro na autenticação do usuário";
-  header('Location:entrar.php?login=erro'); //usada para enviar cabeçalho bruto
-  //encaminhar a aplicação quando instrução for interpretada
-}
+$conn->close();
