@@ -15,25 +15,55 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">folhagens </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="javascript:history.back()">voltar</a></li>
         <li><a href="index.php">menu</a></li>
         <li><a href="carrinho.php">carrinho</a></li>
       </ul>
       
     </div>
   </nav>
-  <ul class="collection">
-    <li class="collection-item avatar">
-      <img src="imagensdoprojeto\acelgachinesa.jpg" alt="" class="circle">
-      <div class="row">
-        <div class="col s12">
-          Quantidade:
-          <div class="input-field inline">
-            <input id="email_inline" type="email" class="validate">
-          </div>
-        </div>
-      </div>
-      </p>
-    </li>
-  </ul>
+  <table>
+        <thead>
+          <tr>
+              <th>Item</th>
+              <th>Nome</th>
+              <th>Preço</th>
+              <th>Quantidade</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><img src="imagensdoprojeto\acelgachinesa.jpg" width="40" height="40"></td>
+            <td>Acelga chinesa</td>
+            <td>$2.00</td>
+            <td><input name="produto" type="int"><button>Comprar</button></td>
+          </tr>
+          <tr>
+            <td><img src="imagensdoprojeto\alface.png" width="40" height="40"></td>
+            <td>Alface</td>
+            <td>$2.50</td>
+            <td><input name="produto" type="int"><button>Comprar</button></td>
+          </tr>
+          <tr>
+            <td><img src="imagensdoprojeto\coentro.jpg" width="40" height="40"></td>
+            <td>Coentro</td>
+            <td>$1.50</td>
+            <td><input name="produto" type="int"><button>Comprar</button></td>
+          </tr>
+          <tr>
+            <td><img src="imagensdoprojeto\rucula.png" width="40" height="40"></td>
+            <td>Rúcula</td>
+            <td>$2.00</td>
+            <td><input name="produto" type="int"><button>Comprar</button></td>
+          </tr>
+          <tr>
+            <td><img src="imagensdoprojeto\cebolinha.jpg" width="40" height="40"></td>
+            <td>Cebolinha</td>
+            <td>$1.50</td>
+            <td><input name="produto" type="int"><button>Comprar</button></td>
+          </tr>
+        </tbody>
+      </table>
 </body>
 </html>
