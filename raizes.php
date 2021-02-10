@@ -15,52 +15,54 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">raizes </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="javascript:history.back()">voltar</a></li>
         <li><a href="index.php">menu</a></li>
         <li><a href="carrinho.php">carrinho</a></li>
       </ul>
     </div>
   </nav>
-  <img src="imagensdoprojeto\cará.jpg" width="40" height="40">
-  <p>cara KG</p>
-  <p>R$10</p>
-  <p>
-    <input name="produto" type="text">
-  </p>
-  <button>Comprar</button>
-  <br>
-  <img src="imagensdoprojeto\inhame.jpg" width="40" height="40">
-  <p>inhame KG</p>
-  <p>R$10</p>
-  <p>
-    <input name="produto" type="text">
-  </p>
-  <button>Comprar</button>
+  <table>
+        <thead>
+          <tr>
+              <th>Item</th>
+              <th>Nome</th>
+              <th>Preço</th>
+              <th>Quantidade</th>
+          </tr>
+        </thead>
 
-  <br>
-  <img src="imagensdoprojeto\jerimun.jpg" width="40" height="40">
-  <p>jerimun KG</p>
-  <p>R$10</p>
-  <p>
-    <input name="produto" type="text">
-  </p>
-  <button>Comprar</button>
-
-  <br>
-  <img src="imagensdoprojeto\mandioca.jpg" width="40" height="40">
-  <p>mandioca KG</p>
-  <p>R$10</p>
-  <p>
-    <input name="produto" type="text">
-  </p>
-  <button>Comprar</button>
-
-  <br>
-  <img src="imagensdoprojeto\cenoura.jpg" width="40" height="40">
-  <p>cenoura KG</p>
-  <p>R$10</p>
-  <p>
-    <input name="produto" type="text">
-  </p>
-  <button>Comprar</button>
+        <tbody>
+          <tr>
+            <td><img src="imagensdoprojeto\jerimun.jpg" width="40" height="40"></td>
+            <td>Jerimun</td>
+            <td>$2.50</td>
+            <td><input name="produto" type="int"><button>Comprar</button></td>
+          </tr>
+          <tr>
+            <td><img src="imagensdoprojeto\cara.jpg" width="40" height="40"></td>
+            <td>Cará</td>
+            <td>$2.00</td>
+            <td><input name="produto" type="int"><button>Comprar</button></td>
+          </tr>
+          <tr>
+            <td><img src="imagensdoprojeto\inhame.jpg" width="40" height="40"></td>
+            <td>Inhame</td>
+            <td>$1.50</td>
+            <td><input name="produto" type="int"><button>Comprar</button></td>
+          </tr>
+          <tr>
+            <td><img src="imagensdoprojeto\mandioca.jpg" width="40" height="40"></td>
+            <td>Mandioca</td>
+            <td>$2.50</td>
+            <td><input name="produto" type="int"><button>Comprar</button></td>
+          </tr>
+          <tr>
+            <td><img src="imagensdoprojeto\cenoura.jpg" width="40" height="40"></td>
+            <td>Cenoura</td>
+            <td>$3.00</td>
+            <td><input name="produto" type="int"><button>Comprar</button></td>
+          </tr>
+        </tbody>
+      </table>
 </body>
 </html>
