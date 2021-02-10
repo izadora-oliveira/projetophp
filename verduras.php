@@ -15,52 +15,54 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">verduras</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="javascript:history.back()">voltar</a></li>
         <li><a href="index.php">menu</a></li>
         <li><a href="carrinho.php">carrinho</a></li>
       </ul>
     </div>
   </nav>
-  <img src="imagensdoprojeto\alho.png" width="40" height="40">
-  <p>alho KG</p>
-  <p>R$10</p>
-  <p>
-    <input name="produto" type="text">
-  </p>
-  <button>Comprar</button>
-  <br>
-  <img src="imagensdoprojeto\alhoporó.jpg" width="40" height="40">
-  <p>alho poró KG</p>
-  <p>R$10</p>
-  <p>
-    <input name="produto" type="text">
-  </p>
-  <button>Comprar</button>
+  <table>
+        <thead>
+          <tr>
+              <th>Item</th>
+              <th>Nome</th>
+              <th>Preço</th>
+              <th>Quantidade</th>
+          </tr>
+        </thead>
 
-  <br>
-  <img src="imagensdoprojeto\brocolis.jpg" width="40" height="40">
-  <p>brócolis KG</p>
-  <p>R$10</p>
-  <p>
-    <input name="produto" type="text">
-  </p>
-  <button>Comprar</button>
-
-  <br>
-  <img src="imagensdoprojeto\pimentao.jpg" width="40" height="40">
-  <p>pimentão KG</p>
-  <p>R$10</p>
-  <p>
-    <input name="produto" type="text">
-  </p>
-  <button>Comprar</button>
-
-  <br>
-  <img src="imagensdoprojeto\cebola.jpg" width="40" height="40">
-  <p>cebola KG</p>
-  <p>R$10</p>
-  <p>
-    <input name="produto" type="text">
-  </p>
-  <button>Comprar</button>
+        <tbody>
+          <tr>
+            <td><img src="imagensdoprojeto\alho.png" width="40" height="40"></td>
+            <td>Alho</td>
+            <td>$1.00</td>
+            <td><input name="produto" type="int"><button>Comprar</button></td>
+          </tr>
+          <tr>
+            <td><img src="imagensdoprojeto\alhoporo.jpg" width="40" height="40"></td>
+            <td>Alho poró</td>
+            <td>$1.50</td>
+            <td><input name="produto" type="int"><button>Comprar</button></td>
+          </tr>
+          <tr>
+            <td><img src="imagensdoprojeto\brocolis.jpg" width="40" height="40"></td>
+            <td>Brocolis</td>
+            <td>$4.00</td>
+            <td><input name="produto" type="int"><button>Comprar</button></td>
+          </tr>
+          <tr>
+            <td><img src="imagensdoprojeto\pimentao.jpg" width="40" height="40"></td>
+            <td>Pimentao</td>
+            <td>$2.00</td>
+            <td><input name="produto" type="int"><button>Comprar</button></td>
+          </tr>
+          <tr>
+            <td><img src="imagensdoprojeto\cebola.jpg" width="40" height="40"></td>
+            <td>Cebola</td>
+            <td>$2.50</td>
+            <td><input name="produto" type="int"><button>Comprar</button></td>
+          </tr>
+        </tbody>
+      </table>
 </body>
 </html>
