@@ -15,7 +15,6 @@ require_once("autenticar.php")
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Menu </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="javascript:history.back()">voltar</a></li>
         <li><a href="carrinho.php">carrinho</a></li>
         <li><a href="entrar.php">entrar</a></li>
         <li><a href="logoff.php">Sair</a></li> 
