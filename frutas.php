@@ -9,7 +9,8 @@
 </head>
 <body>
   <?php
-  require_once("autenticar.php")
+  require_once("autenticar.php");
+  require("conexao.php");
   ?>
   <nav>
     <div class="nav-wrapper">
@@ -21,48 +22,50 @@
       </ul>
     </div>
   </nav>
-    <table>
-        <thead>
-          <tr>
-              <th>Item</th>
-              <th>Nome</th>
-              <th>Preço</th>
-              <th>Quantidade</th>
-          </tr>
-        </thead>
+  <form  action = "carrinho.php" method = "GET">
+      <table>
+          <thead>
+            <tr>
+                <th>Item</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          <tr>
-            <td><img src="imagensdoprojeto\banana.png" width="40" height="40"></td>
-            <td>Banana</td>
-            <td>$3.00</td>
-            <td><input name="banana" type="int"><button>Comprar</button></td>
-          </tr>
-          <tr>
-            <td><img src="imagensdoprojeto\laranja.jpg" width="40" height="40"></td>
-            <td>Laranja</td>
-            <td>$0.50</td>
-            <td><input name="laranja" type="int"><button>Comprar</button></td>
-          </tr>
-          <tr>
-            <td><img src="imagensdoprojeto\manga.jpg" width="40" height="40"></td>
-            <td>Maçan</td>
-            <td>$2.00</td>
-            <td><input name="macan" type="int"><button>Comprar</button></td>
-          </tr>
-          <tr>
-            <td><img src="imagensdoprojeto\morango.jpg" width="40" height="40"></td>
-            <td>Morango</td>
-            <td>$5.00</td>
-            <td><input name="morango" type="int"><button>Comprar</button></td>
-          </tr>
-          <tr>
-            <td><img src="imagensdoprojeto\goiaba.jpg" width="40" height="40"></td>
-            <td>Goiaba</td>
-            <td>$1.00</td>
-            <td><input name="goiaba" type="int"><button>Comprar</button></td>
-          </tr>
-        </tbody>
-      </table>
+          <tbody>
+            <tr>
+              <td><img src="imagensdoprojeto\banana.png" width="40" height="40"></td>
+              <td>Banana</td>
+              <td>$3.00</td>
+              <td><input name="banana" type="int"><button>Comprar</button></td>
+            </tr>
+            <tr>
+              <td><img src="imagensdoprojeto\laranja.jpg" width="40" height="40"></td>
+              <td>Laranja</td>
+              <td>$0.50</td>
+              <td><input name="laranja" type="int"><button>Comprar</button></td>
+            </tr>
+            <tr>
+              <td><img src="imagensdoprojeto\manga.jpg" width="40" height="40"></td>
+              <td>Maçan</td>
+              <td>$2.00</td>
+              <td><input name="macan" type="int"><button>Comprar</button></td>
+            </tr>
+            <tr>
+              <td><img src="imagensdoprojeto\morango.jpg" width="40" height="40"></td>
+              <td>Morango</td>
+              <td>$5.00</td>
+              <td><input name="morango" type="int"><button>Comprar</button></td>
+            </tr>
+            <tr>
+              <td><img src="imagensdoprojeto\goiaba.jpg" width="40" height="40"></td>
+              <td>Goiaba</td>
+              <td>$1.00</td>
+              <td><input name="goiaba" type="int"><button>Comprar</button></td>
+            </tr>
+          </tbody>
+        </table>
+    </form>
 </body>
 </html>
