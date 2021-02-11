@@ -9,23 +9,24 @@
 </head>
 <?php
 session_start();
-if (!isset($_SESSION['itens']))
+if (!isset($_SESSION['']))
 {
-  $_SESSION['itens'] = array();
+  $_SESSION[''] = array();
 }
 if (isset($_get['add']) && $_get['add'] == "carrinho")
 {
   $idprofuto
 }
+?>
 <body>
-<nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">carrinho </a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="javascript:history.back()">voltar</a></li>
-        <li><a href="index.php">menu</a></li>
-      </ul>
-    </div>
-  </nav>
-</body>
+  <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">carrinho </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="javascript:history.back()">voltar</a></li>
+          <li><a href="index.php">menu</a></li>
+        </ul>
+      </div>
+    </nav>
+  </body>
 </html>
