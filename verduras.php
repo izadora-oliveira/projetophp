@@ -9,7 +9,8 @@
 </head>
 <body>
   <?php
-  require_once("autenticar.php")
+  require_once("autenticar.php");
+  require("conexao.php");
   ?>
   <nav>
     <div class="nav-wrapper">
