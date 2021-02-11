@@ -36,31 +36,31 @@
             <td><img src="imagensdoprojeto\jerimun.jpg" width="40" height="40"></td>
             <td>Jerimun</td>
             <td>$2.50</td>
-            <td><input name="produto" type="int"><button>Comprar</button></td>
+            <td><input name="jerimun" type="int"><button>Comprar</button></td>
           </tr>
           <tr>
             <td><img src="imagensdoprojeto\cara.jpg" width="40" height="40"></td>
             <td>Cará</td>
             <td>$2.00</td>
-            <td><input name="produto" type="int"><button>Comprar</button></td>
+            <td><input name="cara" type="int"><button>Comprar</button></td>
           </tr>
           <tr>
             <td><img src="imagensdoprojeto\inhame.jpg" width="40" height="40"></td>
             <td>Inhame</td>
             <td>$1.50</td>
-            <td><input name="produto" type="int"><button>Comprar</button></td>
+            <td><input name="inhame" type="int"><button>Comprar</button></td>
           </tr>
           <tr>
             <td><img src="imagensdoprojeto\mandioca.jpg" width="40" height="40"></td>
             <td>Mandioca</td>
             <td>$2.50</td>
-            <td><input name="produto" type="int"><button>Comprar</button></td>
+            <td><input name="mandioca" type="int"><button>Comprar</button></td>
           </tr>
           <tr>
             <td><img src="imagensdoprojeto\cenoura.jpg" width="40" height="40"></td>
             <td>Cenoura</td>
             <td>$3.00</td>
-            <td><input name="produto" type="int"><button>Comprar</button></td>
+            <td><input name="cenoura" type="int"><button>Comprar</button></td>
           </tr>
         </tbody>
       </table>
