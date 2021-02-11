@@ -36,31 +36,31 @@
             <td><img src="imagensdoprojeto\alho.png" width="40" height="40"></td>
             <td>Alho</td>
             <td>$1.00</td>
-            <td><input name="produto" type="int"><button>Comprar</button></td>
+            <td><input name="alho" type="int"><button>Comprar</button></td>
           </tr>
           <tr>
             <td><img src="imagensdoprojeto\alhoporo.jpg" width="40" height="40"></td>
             <td>Alho poró</td>
             <td>$1.50</td>
-            <td><input name="produto" type="int"><button>Comprar</button></td>
+            <td><input name="alhoporo" type="int"><button>Comprar</button></td>
           </tr>
           <tr>
             <td><img src="imagensdoprojeto\brocolis.jpg" width="40" height="40"></td>
             <td>Brocolis</td>
             <td>$4.00</td>
-            <td><input name="produto" type="int"><button>Comprar</button></td>
+            <td><input name="crocolis" type="int"><button>Comprar</button></td>
           </tr>
           <tr>
             <td><img src="imagensdoprojeto\pimentao.jpg" width="40" height="40"></td>
             <td>Pimentao</td>
             <td>$2.00</td>
-            <td><input name="produto" type="int"><button>Comprar</button></td>
+            <td><input name="pimentao" type="int"><button>Comprar</button></td>
           </tr>
           <tr>
             <td><img src="imagensdoprojeto\cebola.jpg" width="40" height="40"></td>
             <td>Cebola</td>
             <td>$2.50</td>
-            <td><input name="produto" type="int"><button>Comprar</button></td>
+            <td><input name="cebola" type="int"><button>Comprar</button></td>
           </tr>
         </tbody>
       </table>
