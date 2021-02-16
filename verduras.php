@@ -22,48 +22,51 @@
       </ul>
     </div>
   </nav>
-  <table>
-        <thead>
-          <tr>
-              <th>Item</th>
-              <th>Nome</th>
-              <th>Preço</th>
-              <th>Quantidade</th>
-          </tr>
-        </thead>
+  <form  action = "add-to-cart.php" method = "POST">
+    <table>
+          <thead>
+            <tr>
+                <th>Item</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          <tr>
-            <td><img src="imagensdoprojeto\alho.png" width="40" height="40"></td>
-            <td>Alho</td>
-            <td>$1.00</td>
-            <td><input name="alho" type="int"><button>Comprar</button></td>
-          </tr>
-          <tr>
-            <td><img src="imagensdoprojeto\alhoporo.jpg" width="40" height="40"></td>
-            <td>Alho poró</td>
-            <td>$1.50</td>
-            <td><input name="alhoporo" type="int"><button>Comprar</button></td>
-          </tr>
-          <tr>
-            <td><img src="imagensdoprojeto\brocolis.jpg" width="40" height="40"></td>
-            <td>Brocolis</td>
-            <td>$4.00</td>
-            <td><input name="crocolis" type="int"><button>Comprar</button></td>
-          </tr>
-          <tr>
-            <td><img src="imagensdoprojeto\pimentao.jpg" width="40" height="40"></td>
-            <td>Pimentao</td>
-            <td>$2.00</td>
-            <td><input name="pimentao" type="int"><button>Comprar</button></td>
-          </tr>
-          <tr>
-            <td><img src="imagensdoprojeto\cebola.jpg" width="40" height="40"></td>
-            <td>Cebola</td>
-            <td>$2.50</td>
-            <td><input name="cebola" type="int"><button>Comprar</button></td>
-          </tr>
-        </tbody>
-      </table>
+          <tbody>
+            <tr>
+              <td><img src="imagensdoprojeto\alho.png" width="40" height="40"></td>
+              <td><input type="text" name="item16" value="Alho" readonly></td>
+              <td><input type="number" name="preco16" value="1.00" readonly></td>
+              <td><input type="number" name="quantidade16"></td>
+            </tr>
+            <tr>
+              <td><img src="imagensdoprojeto\alhoporo.jpg" width="40" height="40"></td>
+              <td><input type="text" name="item17" value="Alhoporo" readonly></td>
+              <td><input type="number" name="preco17" value="1.50" readonly></td>
+              <td><input type="number" name="quantidade17"></td>
+            </tr>
+            <tr>
+              <td><img src="imagensdoprojeto\brocolis.jpg" width="40" height="40"></td>
+              <td><input type="text" name="item18" value="Brocolis" readonly></td>
+              <td><input type="number" name="preco18" value="4.00" readonly></td>
+              <td><input type="number" name="quantidade18"></td>
+            </tr>
+            <tr>
+              <td><img src="imagensdoprojeto\pimentao.jpg" width="40" height="40"></td>
+              <td><input type="text" name="item19" value="Pimentão" readonly></td>
+              <td><input type="number" name="preco19" value="2.00" readonly></td>
+              <td><input type="number" name="quantidade19"></td>
+            </tr>
+            <tr>
+              <td><img src="imagensdoprojeto\cebola.jpg" width="40" height="40"></td>
+              <td><input type="text" name="item20" value="Cebola" readonly></td>
+              <td><input type="number" name="preco20" value="2.50" readonly></td>
+              <td><input type="number" name="quantidade20"></td>
+            </tr>
+          </tbody>
+        </table>
+        <input type="submit" value="Adicionar ao carrinho">
+    </form>
 </body>
 </html>
