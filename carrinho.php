@@ -7,17 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>carrinho</title>
 </head>
-<?php
-session_start();
-if (!isset($_SESSION['']))
-{
-  $_SESSION[''] = array();
-}
-if (isset($_get['add']) && $_get['add'] == "carrinho")
-{
-  $idprofuto
-}
-?>
 <body>
   <nav>
       <div class="nav-wrapper">
