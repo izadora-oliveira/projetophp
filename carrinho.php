@@ -1,3 +1,7 @@
+<?php
+  require("lancamento.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,6 +18,31 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="javascript:history.back()">voltar</a></li>
           <li><a href="index.php">menu</a></li>
+          <li><a href="logoff.php">Sair</a></li>
+        </ul>
+      </div>
+    </nav>
+        <?php
+          echo '<table border="1">';
+          echo '<tr><th>Nome</th><th>Preço</th><th>Quantidade</th></tr>';
+  
+          foreach($teste as $val) {  
+                 foreach($val as $item) {
+                     echo "<td>{$item}</td>";
+                 }
+  
+              echo "</td>";
+              echo '</tr>';
+          }
+  
+          echo '</table>';
+        ?>
+      </table>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Total a pagar</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><input type="text" name="total" readonly="readonly" value="" /></li>
         </ul>
       </div>
     </nav>
