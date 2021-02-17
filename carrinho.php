@@ -1,5 +1,12 @@
 <?php
-  require("lancamento.php");
+   session_start();
+
+   if (empty($_SESSION['cart'])) {
+      $_SESSION['cart'] = [];
+   }
+    
+    array_push($_SESSION['cart'], $_POST);
+
 ?>
 
 <!DOCTYPE html>
@@ -14,35 +21,53 @@
 <body>
   <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">carrinho </a>
+        <a class="brand-logo">carrinho </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="javascript:history.back()">voltar</a></li>
-          <li><a href="index.php">menu</a></li>
+          <li><a href="javascript:history.back()">Continuar comprando</a></li>
+          <li><a href="index.php">Menu</a></li>
           <li><a href="logoff.php">Sair</a></li>
         </ul>
       </div>
     </nav>
-        <?php
-          echo '<table border="1">';
-          echo '<tr><th>Nome</th><th>Preço</th><th>Quantidade</th></tr>';
-  
-          foreach($teste as $val) {  
-                 foreach($val as $item) {
-                     echo "<td>{$item}</td>";
-                 }
-  
-              echo "</td>";
-              echo '</tr>';
-          }
-  
-          echo '</table>';
-        ?>
-      </table>
+    
+    <table class = "centered">
+      <thead >
+        <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Subtotal</th>
+        </tr>
+      </thead>
+            <tbody>
+            <?php
+              $total = 0; 
+              foreach($_SESSION['cart'] as $produto){
+              $quantidade = $produto['quantidade'];
+              $preco = $produto['preco'];
+              $nome = $produto['item']; 
+              $subtotal = $quantidade * $preco;
+              
+              $linha = "<tr><td>$nome</td>";
+              $linha .= "<td>R$ $preco</td>";
+              $linha .= "<td>$quantidade</td>";
+              $linha .= "<td>R$ $subtotal</td>";
+              
+
+              $total += $subtotal;
+        
+              echo $linha;
+
+             }
+             ?>
+            </tbody> 
+    </table>
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Total a pagar</a>
+        <a class="brand-logo">Total a pagar</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><input type="text" name="total" readonly="readonly" value="" /></li>
+          <li class="brand-logo"><?php echo $total ?></li>
+          <li><a href="finalizando.php">Finalizar compra</a></li>
         </ul>
       </div>
     </nav>
