@@ -35,47 +35,47 @@
           <tbody>
             <tr>
               <td><img src="imagensdoprojeto\alho.png" width="40" height="40"></td>
-              <form  action = "add-to-cart.php" method = "POST">
-              <td><input type="text" name="item16" value="Alho" readonly="readonly"></td>
-              <td><input type="number" name="preco16" value="1.00" readonly="readonly"></td>
-              <td><input type="number" name="quantidade16"></td>
-              <td><input type="submit" value="Adicionar ao carrinho"></td>
+              <form  action = "carrinho.php" method = "POST">
+              <td><input type="text" name="item" value="Alho" readonly="readonly" /></td>
+              <td><input type="number" name="preco" value="1.00" readonly="readonly" /></td>
+              <td><input type="number" name="quantidade" /></td>
+              <td><input type="submit" value="Adicionar ao carrinho" /></td>
               </form>
             </tr>
             <tr>
               <td><img src="imagensdoprojeto\alhoporo.jpg" width="40" height="40"></td>
-              <form  action = "add-to-cart.php" method = "POST">
-              <td><input type="text" name="item17" value="Alhoporo" readonly="readonly"></td>
-              <td><input type="number" name="preco17" value="1.50" readonly="readonly"></td>
-              <td><input type="number" name="quantidade17"></td>
-              <td><input type="submit" value="Adicionar ao carrinho"></td>
+              <form  action = "carrinho.php" method = "POST">
+              <td><input type="text" name="item" value="Alhoporo" readonly="readonly" /></td>
+              <td><input type="number" name="preco" value="1.50" readonly="readonly" /></td>
+              <td><input type="number" name="quantidade" /></td>
+              <td><input type="submit" value="Adicionar ao carrinho" /></td>
               </form>
             </tr>
             <tr>
               <td><img src="imagensdoprojeto\brocolis.jpg" width="40" height="40"></td>
-              <form  action = "add-to-cart.php" method = "POST">
-              <td><input type="text" name="item18" value="Brocolis" readonly="readonly"></td>
-              <td><input type="number" name="preco18" value="4.00" readonly="readonly"></td>
-              <td><input type="number" name="quantidade18"></td>
-              <td><input type="submit" value="Adicionar ao carrinho"></td>
+              <form  action = "carrinho.php" method = "POST">
+              <td><input type="text" name="item" value="Brocolis" readonly="readonly" /></td>
+              <td><input type="number" name="preco" value="4.00" readonly="readonly" /></td>
+              <td><input type="number" name="quantidade" /></td>
+              <td><input type="submit" value="Adicionar ao carrinho" /></td>
               </form>
             </tr>
             <tr>
               <td><img src="imagensdoprojeto\pimentao.jpg" width="40" height="40"></td>
-              <form  action = "add-to-cart.php" method = "POST">
-              <td><input type="text" name="item19" value="Pimentão" readonly="readonly"></td>
-              <td><input type="number" name="preco19" value="2.00" readonly="readonly"></td>
-              <td><input type="number" name="quantidade19"></td>
-              <td><input type="submit" value="Adicionar ao carrinho"></td>
+              <form  action = "carrinho.php" method = "POST">
+              <td><input type="text" name="item" value="Pimentão" readonly="readonly" /></td>
+              <td><input type="number" name="preco" value="2.00" readonly="readonly" /></td>
+              <td><input type="number" name="quantidade" /></td>
+              <td><input type="submit" value="Adicionar ao carrinho" /></td>
               </form>
             </tr>
             <tr>
               <td><img src="imagensdoprojeto\cebola.jpg" width="40" height="40"></td>
-              <form  action = "add-to-cart.php" method = "POST">
-              <td><input type="text" name="item20" value="Cebola" readonly="readonly"></td>
-              <td><input type="number" name="preco20" value="2.50" readonly="readonly"></td>
-              <td><input type="number" name="quantidade20"></td>
-              <td><input type="submit" value="Adicionar ao carrinho"></td>
+              <form  action = "carrinho.php" method = "POST">
+              <td><input type="text" name="item" value="Cebola" readonly="readonly" /></td>
+              <td><input type="number" name="preco" value="2.50" readonly="readonly" /></td>
+              <td><input type="number" name="quantidade" /></td>
+              <td><input type="submit" value="Adicionar ao carrinho" /></td>
               </form>
             </tr>
           </tbody>
