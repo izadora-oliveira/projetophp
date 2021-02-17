@@ -11,7 +11,7 @@
 ?>
 
 <p>
-   O Lançamento foi feito com sucesso.
-   <a href="lancamento.php">finalizar compra</a>
-   <a href="index.php">continuar comprando</a>
+   Adicionado com Sucesso
+   <a href="javascript:history.back()">continuar comprando</a>
+   <a href="lancamento.php">finalizar</a>
 </p>
