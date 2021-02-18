@@ -3,13 +3,16 @@ session_start();
 require("conexao.php");
 $email = $_POST['email'];
 $senha = $_POST['senha'];
-$query_ = "SELECT * FROM usuario WHERE email ='$email' AND senha = '$senha'";
+$query_ = "SELECT * FROM usuario WHERE email ='$email' AND senha = '$senha'"; 
 $result = $conn->query($query_);
 
 
 if ($result->num_rows > 0) {
   while ($row = $result->fetch_assoc()) {
+    $_SESSION['idusuario'] = $row['idusuario'];
+    $_SESSION['nome'] = $row['nome_usuario'];
     $_SESSION['authenticated'] = 'YES';
+    
     header('Location:index.php');
   }
 }else{
