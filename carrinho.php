@@ -66,7 +66,7 @@
       <div class="nav-wrapper">
         <a class="brand-logo">Total a pagar</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li class="brand-logo"><?php echo $total ?></li>
+          <li class="centered"><?php echo $total ?></li>
           <li><a href="finalizando.php">Finalizar compra</a></li>
         </ul>
       </div>
