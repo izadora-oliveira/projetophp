@@ -1,3 +1,29 @@
+<?php
+require("conexao.php");
+session_start();
+
+$total = 0; 
+              foreach($_SESSION['cart'] as $produto){
+              $quantidade = $produto['quantidade'];
+              $preco = $produto['preco'];
+              $nome = $produto['item']; 
+              $subtotal = $quantidade * $preco;
+              $total += $subtotal;
+              $idusuario = $_SESSION['idusuario'];
+
+          $stmt = $conn->prepare("INSERT INTO pedido (idusuario,nome,preco,quantidade,subtotal) VALUES (?,?,?,?,?)");
+          $stmt->bind_param("sssss",$idusuario,$nome ,$preco,$quantidade,$subtotal);
+          $stmt->execute();
+        }
+          $stmt = $conn->prepare("INSERT INTO pedido (idusuario,total) VALUES (?,?)");
+          $stmt->bind_param("ss",$idusuario,$total);
+          $stmt->execute();
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +42,7 @@
         </ul>
         </div>
     </nav>
-    <form method="GET" action="meuspedidos.php" class="col s12">
+    <form method="POST" action="meuspedidos.php" class="col s12">
       <div class="row">
         <div class="input-field col s6">
           <input name="usuario" class = 'validate' required = "" id="name" type="text" class="validate" placeholder="Nome" />
