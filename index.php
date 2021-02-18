@@ -16,6 +16,7 @@ require_once("autenticar.php")
       <a href="#" class="brand-logo">Menu </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="carrinho.php">Carrinho</a></li>
+        <li><a href="meuspedidos.php">Meus pedidos</a></li>
         <li><a href="logoff.php">Sair</a></li> 
       </ul>
     </div>
