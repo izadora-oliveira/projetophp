@@ -1,8 +1,25 @@
+<?php
+      require("conexao.php");
 
-<?php 
-require("conexao.php");
-require("finalizando.php");
+      $query_ = "SELECT * FROM pedido WHERE idusuario ='$idusuario'"; 
+      $result = $conn->query($query_);
+      $pedidousuario = array();
+      if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          //echo $row['nome_aluno'] . "|" . $row['senha'] . "|";
+          $pedidousuario[] = $row['nome'] . '#' . $row['preco'] . "#" . $row['quantidade'] . "#" . $row['subtotal'] . "#" . $row['total'];
+        }
+      } else {
+      
+        //header('Location:home.php?nota=erro1'); //usada para enviar cabeçalho bruto
+        echo ("<script>
+              window.alert('voçê não tem pedido finalizado.')
+              window.location.href='../projetophp/index.php';
+          </script>");
+      }      
+      $conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -16,46 +33,69 @@ require("finalizando.php");
   <body>
       <nav>
         <div class="nav-wrapper">
-          <a class="brand-logo">Nota fiscal </a>
+          <a class="brand-logo">Meus pedidos</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="logoff.php">Sair</a></li>
+            <li><a href="index.php">Menu</a></li>
           </ul>
         </div>
       </nav>
-      <?php
-      $query_ = "SELECT * FROM pedido WHERE idusuario = '$idusuario'";
-      $result = $conn->query($query_);
-      if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-          
-          $idusuario ="produto_". $row['id_produto'];
-          $btnProduto = $row['id_produto'];
-          $nome = $row['nome_produto'];
-          $idNome = "nome_". $row['id_produto'];
-          $preco = $row['preco_produto'];
-          $idPreco = "preco_". $row['id_produto'];
-          $tipo = $row['tipo_produto'];
-          $idTipo = "tipo_produto_". $row['id_produto'];
-          
-      }
 
-            ?>
-        <div class="nav-wrapper">
-          <a class="brand-logo">Total a pagar</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li class=""><?php
-            
-            
-            ?></li>
-          </ul>
-        </div>
-      </nav>
+      <table>
+        <thead>
+          <tr>
+              <th>nome</th>
+              <th>preço</th>
+              <th>quantidade</th>
+              <th>subtotal</th>
+              <th>total</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <?php $cont = 0;
+              foreach ($pedidousuario as $item) {
+                $dados_pedido = explode('#', $item);
+
+
+              }
+              ?>
+          <tr>
+
+            <?php 
+            $a = array();
+                    //$cont++;
+
+                    echo "<td name ='nome'class='table'>";
+                    echo $dados_pedido[0];
+                    echo "</td>";
+                    echo "<td name='preco' class='table'>";
+                    echo $dados_pedido[1];
+                    echo "</td>";
+
+                    echo "<td name='quantidade' class='table'>";
+                    echo $dados_pedido[2];
+                    echo "</td>";
+                    echo "<td name='subtotal' class='table'>";
+                    echo $dados_pedido[3];
+                    echo "</td>";
+
+                    echo "<td name='total' class='table'>";
+                    echo $dados_pedido[4];
+                    echo "</td>";
+
+                  ?>
+          </tr>
+        </tbody>
+      </table>
       <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <p><?php
+
               session_start();
+              header('Access-Control-Allow-Origin: *');
                 if (empty($_SESSION['dadosfinais'])) {
                 $_SESSION['dadosfinais'] = [];}
                               
