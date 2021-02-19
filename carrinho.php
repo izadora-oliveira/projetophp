@@ -1,5 +1,6 @@
 <?php
    session_start();
+   header('Access-Control-Allow-Origin: *');
 
    if (empty($_SESSION['cart'])) {
       $_SESSION['cart'] = [];
@@ -41,12 +42,18 @@
       </thead>
             <tbody>
             <?php
+            require("conexao.php");
               $total = 0; 
+              $idusuario = $_SESSION['idusuario'];
               foreach($_SESSION['cart'] as $produto){
               $quantidade = $produto['quantidade'];
               $preco = $produto['preco'];
               $nome = $produto['item']; 
               $subtotal = $quantidade * $preco;
+
+              $stmt = $conn->prepare("INSERT INTO pedido (idusuario,nome,preco,quantidade,subtotal) VALUES (?,?,?,?,?)");
+              $stmt->bind_param("sssss",$idusuario,$nome ,$preco,$quantidade,$subtotal);
+              $stmt->execute();
               
               $linha = "<tr><td>$nome</td>";
               $linha .= "<td>R$ $preco</td>";
@@ -59,7 +66,12 @@
               echo $linha;
 
              }
+              $stmt = $conn->prepare("INSERT INTO pedido (idusuario,total) VALUES (?,?)");
+              $stmt->bind_param("ss",$idusuario,$total);
+              $stmt->execute();
+
              ?>
+
             </tbody> 
     </table>
     <nav>
