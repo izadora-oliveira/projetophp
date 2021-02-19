@@ -42,7 +42,7 @@
       </thead>
             <tbody>
             <?php
-            require("conexao.php");
+              require("conexao.php");
               $total = 0; 
               $idusuario = $_SESSION['idusuario'];
               foreach($_SESSION['cart'] as $produto){
@@ -50,26 +50,21 @@
               $preco = $produto['preco'];
               $nome = $produto['item']; 
               $subtotal = $quantidade * $preco;
+              $total += $subtotal;
 
-              $stmt = $conn->prepare("INSERT INTO pedido (idusuario,nome,preco,quantidade,subtotal) VALUES (?,?,?,?,?)");
-              $stmt->bind_param("sssss",$idusuario,$nome ,$preco,$quantidade,$subtotal);
+              $stmt = $conn->prepare("INSERT INTO pedido ('idusuario','nome','preco','quantidade','subtotal') VALUES (?,?,?,?,?,?)");
+              $stmt->bind_param("issss",$idusuario,$nome ,$preco,$quantidade,$subtotal);
               $stmt->execute();
               
               $linha = "<tr><td>$nome</td>";
               $linha .= "<td>R$ $preco</td>";
               $linha .= "<td>$quantidade</td>";
               $linha .= "<td>R$ $subtotal</td>";
-              
-
-              $total += $subtotal;
+            
         
               echo $linha;
 
              }
-              $stmt = $conn->prepare("INSERT INTO pedido (idusuario,total) VALUES (?,?)");
-              $stmt->bind_param("ss",$idusuario,$total);
-              $stmt->execute();
-
              ?>
 
             </tbody> 
