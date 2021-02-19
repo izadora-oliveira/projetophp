@@ -1,5 +1,6 @@
 <?php
 session_start();
+header('Access-Control-Allow-Origin: *');
 require("conexao.php");
 $email = $_POST['email'];
 $senha = $_POST['senha'];
