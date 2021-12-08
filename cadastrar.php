@@ -23,8 +23,8 @@ if ($result->num_rows > 0) {
 }
 
 if ($registeredEmail) {
-  $stmt = $conn->prepare("INSERT INTO usuario (nome,email,senha,endereço) VALUES (?,?,?,?)");
-  $stmt->bind_param("ssss",$nome ,$email,$senha,$endereco);
+  $stmt = $conn->prepare("INSERT INTO usuario (email,nome,senha,endereco) VALUES (?,?,?,?)");
+  $stmt->bind_param("ssis",$email,$nome,$senha,$endereco);
   $stmt->execute();
   $conn->close();
   header('Location:entrar.php');
