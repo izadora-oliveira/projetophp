@@ -10,7 +10,7 @@ $result = $conn->query($query_);
 
 if ($result->num_rows > 0) {
   while ($row = $result->fetch_assoc()) {
-    $_SESSION['idusuario'] = $row['idusuario'];
+    $_SESSION['id'] = $row['id'];
     $_SESSION['nome'] = $row['nome'];
     $_SESSION['authenticated'] = 'YES';
     

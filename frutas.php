@@ -31,7 +31,7 @@
               <td><img src="imagensdoprojeto\banana.png" width="40" height="40"></td>
               <form action="cadastrando_produto.php" method="POST">
               <td><input type="text" name="item" value="Banana" readonly="readonly" /></td>
-              <td><input type="number" name="preco" value="3.00" readonly="readonly" /></td>
+              <td><input type="number" name="preco" value=3.00 readonly="readonly" /></td>
               <td><input type="number" name="quantidade" /></td>
               <td><input type="submit" value="Adicionar ao carrinho" /></td>
             </form>
@@ -40,7 +40,7 @@
               <td><img src="imagensdoprojeto\laranja.jpg" width="40" height="40"></td>
               <form action="cadastrando_produto.php" method="POST">
               <td><input type="text" name="item" value="Laranja" readonly="readonly" /></td>
-              <td><input type="number" name="preco" value="0.50" readonly="readonly" /></td>
+              <td><input type="number" name="preco" value=0.50 readonly="readonly" /></td>
               <td><input type="number" name="quantidade" /></td>
               <td><input type="submit" value="Adicionar ao carrinho" /></td>
               </form>
@@ -49,7 +49,7 @@
               <td><img src="imagensdoprojeto\manga.jpg" width="40" height="40"></td>
               <form action="cadastrando_produto.php" method="POST">
               <td><input type="text" name="item" value="Marçan" readonly="readonly" /></td>
-              <td><input type="number" name="preco" value="2.00" readonly="readonly" /></td>
+              <td><input type="number" name="preco" value=2.00 readonly="readonly" /></td>
               <td><input type="number" name="quantidade" /></td>
               <td><input type="submit" value="Adicionar ao carrinho"></td>
               </form>

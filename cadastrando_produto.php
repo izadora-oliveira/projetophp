@@ -1,15 +1,32 @@
 <?php
-$item = filter_input(INPUT_POST, 'item', FILTER_SANITIZE_STRING);
-$preco = filter_input(INPUT_POST, 'preco', FILTER_SANITIZE_NUMBER_FLOAT);
-$quantidade = filter_input(INPUT_POST, 'quantidade', FILTER_SANITIZE_NUMBER_INT);
-$subtotal = $quantidade * $preco;
-
+session_start();
 
 require("conexao.php");
 
-$stmt = $conn->prepare("INSERT INTO pedido (item,preco,quantidade,subtotal) VALUES (?,?,?,?)");
-  $stmt->bind_param("sdid",$item,$preco,$quantidade,$subtotal);
-  $stmt->execute();
-  $conn->close();
-
-  header('Location:javascript:history.back()');
+if(isset($_POST["item"]) && isset($_POST["preco"]) && isset($_POST["quantidade"]))
+{
+	if(empty($_POST["quantidade"]))
+		$erro = "Campo item obrigatório";
+	else
+	{
+		//Vamos realizar o cadastro ou alteração dos dados enviados.
+    $idusuario = $_SESSION['id'];
+    $item   = $_POST["item"];
+		$preco  = $_POST["preco"];
+		$quantidade = $_POST["quantidade"];
+		$subtotal = $quantidade*$preco;
+		
+		$stmt = $conn->prepare("INSERT INTO `pedido` (`idusuario`,`item`,`preco`,`quantidade`,`subtotal`) VALUES (?,?,?,?,?)");
+		$stmt->bind_param('isdid',$idusuario, $item, $preco, $quantidade, $subtotal);
+		
+		if(!$stmt->execute())
+		{
+			$erro = $stmt->error;
+		}
+		else
+		{
+			header('Location:javascript:history.go(-1)');
+		}
+    
+	}
+}
