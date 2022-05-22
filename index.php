@@ -1,24 +1,29 @@
-<?php include "header.php" ?>
-
-<body>
-<?php
-require_once("autenticar.php")
-?>
-<nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Menu </a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="carrinho.php">Carrinho</a></li>
-        <li><a href="meuspedidos.php">Meus pedidos</a></li>
-        <li><a href="logoff.php">Sair</a></li> 
-      </ul>
-    </div>
-  </nav>
-<div class="collection">
-        <a href="frutas.php" class="collection-item">Frutas</a>
-        <a href="verduras.php" class="collection-item active">Verduras</a>
-        <a href="folhagens.php" class="collection-item">Folhagens</a>
-        <a href="raizes.php" class="collection-item">Raízes</a>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <title>Entrar</title>
+  </head>
+  <body>
+    <div class="card text-center" style="width: 25rem;">
+      <div class="card-body">
+        <h5 class="card-title">Entrar</h5>
       </div>
-</body>
-</html>
+      <form  action = "login.php" method = "POST">
+        <div class="form-group">
+          <input name="email" class = 'validate' required = "" type="email" class="form-control" placeholder="E-mail">
+        </div>
+        <div class="form-group">
+          <input name="senha" class = 'validate' required = "" type="password" class="form-control" placeholder="Senha">
+        </div>
+        <div class="card-body">
+        <button type="submit" class="card-link">Entrar</button>
+        <a href="cadastro.php" class="card-link">Cadastrar</a>
+        </div>
+      </form> 
+    </div>
+  </body>
+</html> 

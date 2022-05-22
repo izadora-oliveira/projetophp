@@ -5,13 +5,14 @@ require("conexao.php");
 
 if(isset($_POST["item"]) && isset($_POST["preco"]) && isset($_POST["quantidade"]))
 {
+	
 	if(empty($_POST["quantidade"]))
 		$erro = "Campo item obrigatório";
 	else
 	{
 		//Vamos realizar o cadastro ou alteração dos dados enviados.
-    $idusuario = $_SESSION['id'];
-    $item   = $_POST["item"];
+    	$idusuario = $_SESSION['id'];
+    	$item   = $_POST["item"];
 		$preco  = $_POST["preco"];
 		$quantidade = $_POST["quantidade"];
 		$subtotal = $quantidade*$preco;

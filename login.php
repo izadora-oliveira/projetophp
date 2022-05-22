@@ -14,13 +14,13 @@ if ($result->num_rows > 0) {
     $_SESSION['nome'] = $row['nome'];
     $_SESSION['authenticated'] = 'YES';
     
-    header('Location:index.php');
+    header('Location:paginainicial.php');
   }
 }else{
   $_SESSION['autenticado'] = 'N';
   echo ("<script>
     window.alert('Usuário ou senha incorretos!')
-    window.location.href='entrar.php?login=erro1';
+    window.location.href='index.php?login=erro1';
     </script>");
 }
 $conn->close();

@@ -1,85 +1,66 @@
+<?php
+  require_once("autenticar.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <title>folhagens</title>
-</head>
-<body>
   <?php
-  require_once("autenticar.php");
-  require("conexao.php");
+    include("header.php")
   ?>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">folhagens </a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="index.php">menu</a></li>
-        <li><a href="carrinho.php">carrinho</a></li>
-      </ul>
-      
-    </div>
-  </nav>
-    <table>
-          <thead>
-            <tr>
-                <th>Item</th>
-                <th>Nome</th>
-                <th>Preço</th>
-                <th>Quantidade</th>
-                <th>Subtotal</th>
-            </tr>
-          </thead>
+<body>
+<nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Folhagens</font></font></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="paginainicial.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Menu</font></font></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="carrinho.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Carrinho</font></font></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="logoff.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sair</font></font></a>
+                </li>          
+            </ul>
+        </div>
+      </div>
+    </nav>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Imagem</th>
+      <th scope="col">Código</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Quantidade</th>
+      <th scope="col">Adicionar</th>
+    </tr>
+  </thead>
+  <tbody>
+                <?php
+                require "conexao.php";
+                $result = $conn->query("SELECT `cod`, `nome`, `imagem`, `preco` FROM `tbl_produtos`");
+                while ($aux_query = $result->fetch_assoc()) 
+                {                    echo '<tr>';
+                    echo '  <td><img src='.$aux_query["imagem"].'/></td>';
+                    echo '  <td>'.$aux_query["cod"].'</td>';
+                    echo '  <td>'.$aux_query["nome"].'</td>';
+                    echo '  <td>'.$aux_query["preco"].'</td>';
+                    echo '  <td>Quantidade</td>';
+                    echo '  <td><a href="cadastrando_produto.php?cod=".$cod."&acao=incluir">incluir</a></td>';
+                    echo '</tr>';
+                }
+                ?>
+              </tbody>
+</table>
 
-          <tbody>
-            <tr>
-              <td><img src="imagensdoprojeto\acelgachinesa.jpg" width="40" height="40"></td>
-              <form action="carrinho.php" method="POST">
-              <td><input type="text" name="item" value="Acelga chinesa" readonly="readonly" /></td>
-              <td><input type="number" name="preco" value="2.00" readonly="readonly" /></td>
-              <td><input type="number" name="quantidade" /></td>
-              <td><input type="submit" value="Adicionar ao carrinho" /></td>
-              </form>
-            </tr>              
-            <tr>
-              <td><img src="imagensdoprojeto\alface.png" width="40" height="40"></td>
-              <form  action = "carrinho.php" method = "POST">
-              <td><input type="text" name="item" value="Alface" readonly="readonly" /></td>
-              <td><input type="number" name="preco" value="2.50" readonly="readonly" /></td>
-              <td><input type="number" name="quantidade" /></td>
-              <td><input type="submit" value="Adicionar ao carrinho" /></td>
-              </form>
-            </tr>
-            <tr>
-              <td><img src="imagensdoprojeto\coentro.jpg" width="40" height="40"></td>
-              <form action="carrinho.php" method="POST">
-              <td><input type="text" name="item" value="Coentro" readonly="readonly" /></td>
-              <td><input type="number" name="preco" value="1.50" readonly="readonly" /></td>
-              <td><input type="number" name="quantidade" /></td>
-              <td><input type="submit" value="Adicionar ao carrinho" /></td>
-              </form>
-            </tr>
-            <tr>
-              <td><img src="imagensdoprojeto\rucula.png" width="40" height="40"></td>
-              <form action="carrinho.php" method="POST">
-              <td><input type="text" name="item" value="Rúcula" readonly="readonly" /></td>
-              <td><input type="number" name="preco" value="2.00" readonly="readonly" /></td>
-              <td><input type="number" name="quantidade" /></td>
-              <td><input type="submit" value="Adicionar ao carrinho" /></td>
-              </form>
-            </tr>
-            <tr>
-              <td><img src="imagensdoprojeto\cebolinha.jpg" width="40" height="40"></td>
-              <form action="carrinho.php" method="POST">
-              <td><input type="text" name="item" value="Cebolinha" readonly="readonly" /></td>
-              <td><input type="number" name="preco" value="1.50" readonly="readonly" /></td>
-              <td><input type="number" name="quantidade" /></td>
-              <td><input type="submit" value="Adicionar ao carrinho" /></td>
-              </form>
-            </tr>
-          </tbody>
-        </table>
+      <table class = "centered">
+        
+              
+      </table>
 </body>
 </html>
