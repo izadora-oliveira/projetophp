@@ -1,21 +1,12 @@
 <?php
 require("conexao.php");
-
 	
-    	$idproduto  = $_POST["idproduto"];
-		echo $idproduto;
-		
-		$stmt = $conn->prepare("DELETE * FROM `pedido` WHERE idproduto = $idproduto");
-		$stmt->bind_param('i',$idproduto);
+$cod_produto  = $_POST["cod_produto"];
 
-		if(!$stmt->execute())
-		{
-			$erro = $stmt->error;
-		}
-		else
-		{
-			header('Location:javascript:history.go(-1)');
-		}
+$query_ = "DELETE FROM `tbl_carrinho` WHERE `cod_produto` = $cod_produto";
+$result = $conn->query($query_);
 
-
-		DELETE FROM `tbl_produtos` WHERE `tbl_produtos`.`cod` = 6;
+echo ("<script>
+    window.alert('item Excluido!')
+    window.location.href='carrinho.php';
+    </script>");

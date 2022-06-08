@@ -1,5 +1,6 @@
 <?php 
-require_once("autenticar.php")
+require_once("autenticar.php");
+require('getCarrinho.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -7,61 +8,55 @@ require_once("autenticar.php")
 include("header.php");
 ?>
 <body>
-  <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Carrinho</font></font></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="javascript:void(0)" onClick="history.go(-1); return false;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Voltar</font></font></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="paginainicial.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Menu</font></font></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="logoff.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sair</font></font></a>
-                </li>          
-            </ul>
-        </div>
-      </div>
-    </nav>
-    
-    <table class = "centered">
-      <thead >
-        <tr>
-            <th>idproduto</th>
-            <th>Item</th>
-            <th>Preço</th>
-            <th>Quantidade</th>
-            <th>Subtotal</th>
-            <th>Excluir</th>
-        </tr>
-      </thead>
-        <tbody>
+  <?php include("nav.php"); ?>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Código</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Quantidade</th>
+      <th scope="col">Subtotal</th>
+      <th scope="col">Excluir</th>
+    </tr>
+  </thead>
+  <tbody>
+          <?php
+          $total = 0;
+          foreach ($itenscarrinho as $item)
+          {
+           ?>
+            <tr>
+            <form method="post" action="delete.php">
+              <?php
+              echo "<td name ='cod_produto' class='table-Default'>";
+              echo "<input type='hidden' name='cod_produto' id='cod_produto' value='$item[0]'/>$item[0]";
+              echo "</td>";
+              echo "<td name='nome' class='table-Default'>";
+              echo "<input type='hidden' name='nome' id='nome' value='$item[1]'/>$item[1]";
+              echo "</td>";
+              echo "<td name='preco' class='table-Default'>";
+              echo "<input type='hidden' name='preco' id='preco' />R$ $item[2]";
+              echo "</td>";
+              echo "<td name='quantidade' class='table-Default'>";
+              echo "<input type='hidden' name='quantidade' id='quantidade'value='$item[3]'/>$item[3]";
+              echo "</td>";
+              echo "<td name='subtotal' class='table-Default'>";
+              echo "<input type='hidden' name='subtotal' id='subtotal'value='$item[4]'/>R$ $item[4]";
+              echo "</td>";
+              echo "<td name='excluir' class='table-Default'>";
+              echo "<button type='submit' class='btn btn-danger btn-sm'>Excluir</button>";
+              echo "</td>";
+              $total += $item[4];
+              ?> 
+            </form>
+            </tr>
             <?php
-            require("conexao.php");
-
-            $acao = $_GET['acao'];
-            $cod =  $_GET['cod'];
-          
-            // Verificamos se a acao é igual a incluir
-            if ($acao == "incluir")
-            {
-              $result = $conn->query("SELECT * FROM tbl_produtos WHERE cod ='$cod'");
-
-                if ($result->num_rows > 0) {
-                  $stmt = $conn->prepare("INSERT INTO `tbl_carrinho` (`cod`,`nome`,`preco`,`quantidade`,`subtotal`) VALUES (?,?,?,?,?)");
-                  $stmt->bind_param('isdid',$idusuario, $item, $preco, $quantidade, $subtotal);
-                  $stmt->execute();
-                    
-                  header('Location:produtos.php');
-                }
-              }?>
-
+          }
+          ?>
         </tbody>
-    </table>
-  </body>
+</table>  
+    
+</body>
 </html>
