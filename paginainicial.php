@@ -17,7 +17,7 @@ include("header.php")
     <div class="container">
       <!-- Content here -->
       <div class="card" style="width: 16rem;">
-        <img src="imagensdoprojeto\folhagens.png" class="card-img-top">
+        <img src="imagens\folhagens.png" class="card-img-top">
           <div class="card-body">
             <a href="folhagens.php" class="btn btn-primary">Folhagens</a>
           </div>
