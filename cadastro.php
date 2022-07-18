@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <?php include "header.php" ?>
 <body>
-<section class="background-radial-gradient overflow-hidden">
+
+  <section class="background-radial-gradient overflow-hidden">
     <style>
       .background-radial-gradient {
         background-image: url("imagens/index.png");
@@ -35,14 +36,14 @@
             <label class="form-label" for="senha">Senha</label>
           </div>
           <div class="form-outline mb-4">
-            <input type="password" name="senha" id="senha" class="form-control" />
-            <label class="form-label" for="senha">Repita Senha</label>
+            <input type="password" name="senha2" id="senha2" class="form-control" />
+            <label class="form-label" for="senha2">Repita Senha</label>
           </div>
 
           <!-- Submit button -->
-          <input type="submit" name="entrar" value="Entrar" class="btn btn-success btn-block mb-4"></input>
+          <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-success btn-block mb-4"></input>
           <button type="button" class="btn btn-warning btn-block mb-4">
-          <a href="cadastro.php">Cadastrar</a>
+          <a href="index.php">Entrar</a>
           </button>
 
           </form>
