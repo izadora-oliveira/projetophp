@@ -11,6 +11,12 @@
         .bg-glass {
           background-color: hsl(30, 100%, 70%) !important;
         }
+        .card{
+          margin: auto;
+          width: 60%;
+          border: 3px solid #73AD21;
+          padding: 10px;
+        }
       </style>
 
       <div class="container px-4 py-5 px-md-5  my-5">

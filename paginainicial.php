@@ -8,27 +8,37 @@ require_once("autenticar.php")
 include("header.php")
 ?>
 <body>
+  <style>
+    .background-radial-gradient {
+      background-image: url("imagens/index.png");
+    }
+  </style>
+  
   <?php
     include("nav.php")
   ?>
 
   <!-- Section: Design Block -->
   <section class="background-radial-gradient overflow-hidden">
-
-    <style>
-      .background-radial-gradient {
-        background-image: url("imagens/index.png");
-      }
-    </style>
     <div class="container px-4 py-5 px-md-5  my-5">
-
-      <div class="card" style="width: 16rem;">
+    <div class="row">
+      <?php
+      $setores = ['folhagens','raizes','frutas','verduras'];
+      foreach($setores as $setor){
+        ?>
+        <div class="col-sm-3">
+        <div class="card" style="width: 16rem;">
           <img src="imagens\folhagens.png" class="card-img-top">
           <div class="card-body">
-            <a href="folhagens.php" class="btn btn-primary">Folhagens</a>
+            <a href="folhagens.php" class="btn btn-success"><?php echo $setor ?></a>
           </div>
+        </div>
       </div>
-
+        <?php
+      }
+      ?>
+    </div>
+      
     </div>
 
   </section>
