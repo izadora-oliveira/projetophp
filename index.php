@@ -23,7 +23,7 @@
         <div class="card bg-glass" style="width: 30rem;">
           <div class="card-body px-4 py-5 px-md-5">
           <h1 class="card-title" style="color: hsl(120, 60%, 50%)">Feira Delivery</h1>
-          <form  action = "login.php" method = "POST">
+          <form  action = "controller.php" method = "POST">
               <!-- Email input -->
               <div class="form-outline mb-4">
                 <input type="email" name="email" id="email" class="form-control" />

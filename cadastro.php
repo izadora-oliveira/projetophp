@@ -22,7 +22,7 @@
       <div class="card bg-glass" style="width: 30rem;">
         <div class="card-body px-4 py-5 px-md-5">
         <h1 class="card-title" style="color: hsl(120, 60%, 50%)">Cadastro</h1>
-        <form  action = "cadastrar.php" method = "POST">
+        <form  action = "controller.php" method = "POST">
           <!-- Nome input -->
           <div class="form-outline mb-4">
             <input type="text" name="nome" id="nome" class="form-control" />

@@ -27,10 +27,10 @@ include("header.php")
       foreach($setores as $setor){
         ?>
         <div class="col-sm-3">
-        <div class="card" style="width: 16rem;">
-          <img src="imagens\folhagens.png" class="card-img-top">
+        <div class="card" style="width: 16rem; height:18rem;">
+          <img src="imagens\<?php echo  $setor ?>.jpg" class="card-img-top">
           <div class="card-body">
-            <a href="folhagens.php" class="btn btn-success"><?php echo $setor ?></a>
+            <a href="<?= $setor ?>.php" class="btn btn-success"><?php echo $setor ?></a>
           </div>
         </div>
       </div>

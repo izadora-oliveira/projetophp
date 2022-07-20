@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="paginainicial.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Menu</font></font></a>
+                    <a class="nav-link active" aria-current="page" href="setores.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Menu</font></font></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="carrinho.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Carrinho</font></font></a>
