@@ -28,7 +28,7 @@ include("header.php")
         ?>
         <div class="col-sm-3">
         <div class="card" style="width: 16rem; height:18rem;">
-          <img src="imagens\<?php echo  $setor ?>.jpg" class="card-img-top">
+          <img src="imagens\<?php  echo  $setor?>\<?php echo  $setor ?>.jpg" class="card-img-top">
           <div class="card-body">
             <a href="<?= $setor ?>.php" class="btn btn-success"><?php echo $setor ?></a>
           </div>

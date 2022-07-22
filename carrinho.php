@@ -28,7 +28,7 @@ include("header.php");
           {
            ?>
             <tr>
-            <form method="post" action="delete.php">
+            <form method="post" action="controller.php">
               <?php
               echo "<td name ='cod_produto' class='table-Default'>";
               echo "<input type='hidden' name='cod_produto' id='cod_produto' value='$item[0]'/>$item[0]";
@@ -46,7 +46,7 @@ include("header.php");
               echo "<input type='hidden' name='subtotal' id='subtotal'value='$item[4]'/>R$ $item[4]";
               echo "</td>";
               echo "<td name='excluir' class='table-Default'>";
-              echo "<button type='submit' class='btn btn-danger btn-sm'>Excluir</button>";
+              echo "<input type='submit' name='excluirItemCarrinho' value='Excluir' class='btn btn-danger btn-sm'/>";
               echo "</td>";
               $total += $item[4];
               ?> 

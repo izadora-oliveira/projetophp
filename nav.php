@@ -1,16 +1,28 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-success">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mercado Online</font></font></a>
+        <a class="navbar-brand" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Feira Delivery</font></font></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="setores.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Menu</font></font></a>
+                    <a class="nav-link active" aria-current="page" href="setores.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Setores</font></font></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="carrinho.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Carrinho</font></font></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="folhagens.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Folhagens</font></font></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="raizes.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Raízes</font></font></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="frutas.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Frutas</font></font></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="verduras.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Verduras</font></font></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="logoff.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sair</font></font></a>

@@ -71,3 +71,34 @@ if (isset($cadastrar)&& !empty($cadastrar))
     </script>");
   }
 }
+
+if(isset($addcarrinho) && !empty($addcarrinho))
+{
+  $cod_cli  = $_SESSION['id'];
+  $preco = $_POST['preco'];
+  $quantidade = $_POST['quantidade'];
+  $subtotal = $quantidade*$preco;
+
+  $stmt = $conn->prepare("INSERT INTO tbl_carrinho (cod_cli,cod_produto,nome,preco,qtd,subtotal) VALUES (?,?,?,?,?,?)");
+  $stmt->bind_param('iisdid',$cod_cli,$cod,$nome,$preco,$quantidade,$subtotal);
+  $stmt->execute();
+  $conn->close();
+
+  echo ("<script>
+      window.alert('Cadastro realizado com Sucesso!')
+      window.location.href='folhagens.php';
+	    </script>");
+}
+
+if(isset($excluirItemCarrinho) && !empty($excluirItemCarrinho))
+{
+  $cod_produto  = $_POST["cod_produto"];
+
+  $query_ = "DELETE FROM `tbl_carrinho` WHERE `cod_produto` = $cod_produto";
+  $result = $conn->query($query_);
+
+  echo ("<script>
+      window.alert('item Excluido!')
+      window.location.href='carrinho.php';
+      </script>");
+}
