@@ -2,6 +2,13 @@
 session_start();
 require("conexao.php");
 
+if (!isset($_SESSION ['authenticated'] ) )  {
+  echo ("<script>
+  window.alert('você não esta logado!')
+  window.location.href='index.php';
+</script>");
+}
+
 if(isset($_POST) && !empty($_POST))
 {  
     foreach( $_POST as $nome_campo => $valor)
@@ -22,7 +29,7 @@ if (isset($entrar) && !empty($entrar))
     while ($row = $result->fetch_assoc()) {
       $_SESSION['id'] = $row['id'];
       $_SESSION['authenticated'] = 'YES';
-      header('Location:setores.php');
+      header('Location:folhagens.php');
     }
     
   }else{
@@ -101,4 +108,11 @@ if(isset($excluirItemCarrinho) && !empty($excluirItemCarrinho))
       window.alert('item Excluido!')
       window.location.href='carrinho.php';
       </script>");
+}
+
+if(isset($sair) && !empty($sair))
+{
+  session_start();
+  session_destroy();
+  header('Location:index.php');
 }

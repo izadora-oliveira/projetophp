@@ -52,3 +52,16 @@ function getVerduras()
     
     return $itens;
 }
+
+function getCarrinho()
+{
+    require("conexao.php");
+
+    $query_ = "SELECT * FROM tbl_carrinho ";
+    $result = $conn->query($query_);
+    $itenscarrinho = array();
+    while ($row = $result->fetch_assoc()) {
+    $itenscarrinho[] = [$row['cod_produto'],$row['nome'],$row['preco'],$row['qtd'],$row['subtotal']];
+    }
+    return $itenscarrinho;
+}

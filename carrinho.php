@@ -1,6 +1,6 @@
 <?php 
-require_once("autenticar.php");
-require('getCarrinho.php');
+require_once("controller.php");
+require('manager.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,6 +24,7 @@ include("header.php");
   <tbody>
           <?php
           $total = 0;
+          $itenscarrinho = getCarrinho();
           foreach ($itenscarrinho as $item)
           {
            ?>
