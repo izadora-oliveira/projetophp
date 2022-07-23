@@ -1,62 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<?php include "header.php" ?>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords"
+          content="unique login form,leamug login form,boostrap login form,responsive login form,free css html login form,download login form">
+    <meta name="author" content="leamug">
+    <title>Feira Delivery</title>
+    <link href="css/style.css" rel="stylesheet" id="style">
+    <!-- Bootstrap core Library -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <!-- Font Awesome-->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
 <body>
 
-  <section class="background-radial-gradient overflow-hidden">
-    <style>
-      .background-radial-gradient {
-        background-image: url("imagens/index.png");
-      }
-      .bg-glass {
-        background-color: hsl(30, 100%, 70%) !important;
-      }
-      .card{
-          margin: auto;
-          width: 60%;
-          padding: 10px;
-        }
-    </style>
-
-    <div class="container px-4 py-5 px-md-5  my-5">
-      <div class="card bg-glass" style="width: 30rem;">
-        <div class="card-body px-4 py-5 px-md-5">
-        <h1 class="card-title" style="color: hsl(120, 60%, 50%)">Cadastro</h1>
-        <form  action = "controller.php" method = "POST">
-          <!-- Nome input -->
-          <div class="form-outline mb-4">
-            <input type="text" name="nome" id="nome" class="form-control" />
-            <label class="form-label" for="email">Nome</label>
-          </div>
-
-          <!-- Email input -->
-          <div class="form-outline mb-4">
-            <input type="email" name="email" id="email" class="form-control" />
-            <label class="form-label" for="email">Email</label>
-          </div>
-
-          <!-- Password input -->
-          <div class="form-outline mb-4">
-            <input type="password" name="senha" id="senha" class="form-control" />
-            <label class="form-label" for="senha">Senha</label>
-          </div>
-          <div class="form-outline mb-4">
-            <input type="password" name="senha2" id="senha2" class="form-control" />
-            <label class="form-label" for="senha2">Repita Senha</label>
-          </div>
-
-          <!-- Submit button -->
-          <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-success btn-block mb-4"></input>
-          <button type="button" class="btn btn-warning btn-block mb-4">
-          <a href="index.php">Entrar</a>
-          </button>
-
-          </form>
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-4 text-center">
+              <div class="form-login"></br>
+                <h4>Cadastro</h4>
+                </br>
+                <form action="controller.php" method="POST">
+                <label for="name">Nome</label>
+                <input type="text" id="nome" name="nome" class="form-control input-sm chat-input" placeholder="" require/>
+                </br></br>
+                <label for="name">Email</label>
+                <input type="email" id="email" name="email" class="form-control input-sm chat-input"/>
+                </br></br>
+                <label for="name">Senha</label>
+                <input type="password" id="senha" name="senha" class="form-control input-sm chat-input"/>
+                </br></br>
+                <label for="name">Repetir Senha</label>
+                <input type="password" id="senha2" name="senha2" class="form-control input-sm chat-input"/>
+                </br></br>
+                <div class="wrapper">
+                <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-success btn-md">
+                <a href="index.php" class="btn btn-success" role="button">Entrar</a>
+                </div>
+                </form>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </div>   
+</div>
 </body>
 </html>

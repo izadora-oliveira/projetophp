@@ -1,0 +1,48 @@
+/*author:starttemplate*/
+/*reference site : starttemplate.com*/
+body {
+    background-image:url('../imagens/index.png');
+  }
+  
+  .container {
+      padding: 110px;
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #ffffff!important;
+      opacity: 1; /* Firefox */
+      font-size:18px!important;
+  }
+  .form-login {
+      background-color: rgba(255, 159, 56, 0.8);
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 15px;
+      border-color:#d2d2d2;
+      border-width: 5px;
+      color:white;
+      box-shadow:0 1px 0 #cfcfcf;
+      text-align: left;
+  }
+  .form-control{
+      background:transparent!important;
+      color:white!important;
+      font-size: 18px!important;
+      border-radius: 10px;
+  }
+  h1{
+      color:white!important;
+  }
+  h4 { 
+   border:0 solid #fff; 
+   border-bottom-width:1px;
+   padding-bottom:10px;
+   text-align: center;
+  }
+  
+  .text-white{
+      color: white!important;
+  }
+  .wrapper {
+      text-align: center;
+  }

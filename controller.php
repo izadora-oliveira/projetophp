@@ -2,13 +2,6 @@
 session_start();
 require("conexao.php");
 
-if (!isset($_SESSION ['authenticated'] ) )  {
-  echo ("<script>
-  window.alert('você não esta logado!')
-  window.location.href='index.php';
-</script>");
-}
-
 if(isset($_POST) && !empty($_POST))
 {  
     foreach( $_POST as $nome_campo => $valor)
@@ -16,6 +9,13 @@ if(isset($_POST) && !empty($_POST))
        $comando = "$" . $nome_campo . "='" . $valor . "';"; 
        eval($comando); 
     }
+}
+
+if (!isset($_SESSION ['authenticated']) && (!isset($entrar)) && (!isset($cadastrar)) )  {
+  echo ("<script>
+  window.alert('você não esta logado!')
+  window.location.href='index.php';
+</script>");
 }
 
 if (isset($entrar) && !empty($entrar))
