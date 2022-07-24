@@ -41,7 +41,7 @@
                 </br></br>
                 <div class="wrapper">
                 <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-success btn-md">
-                <a href="index.php" class="btn btn-success" role="button">Entrar</a>
+                <a href="login.php" class="btn btn-success" role="button">Entrar</a>
                 </div>
                 </form>
             </div>

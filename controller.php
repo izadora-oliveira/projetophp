@@ -14,7 +14,7 @@ if(isset($_POST) && !empty($_POST))
 if (!isset($_SESSION ['authenticated']) && (!isset($entrar)) && (!isset($cadastrar)) )  {
   echo ("<script>
   window.alert('você não esta logado!')
-  window.location.href='index.php';
+  window.location.href='login.php';
 </script>");
 }
 
@@ -29,14 +29,14 @@ if (isset($entrar) && !empty($entrar))
     while ($row = $result->fetch_assoc()) {
       $_SESSION['id'] = $row['id'];
       $_SESSION['authenticated'] = 'YES';
-      header('Location:folhagens.php');
+      header('Location:produtos.php');
     }
     
   }else{
     $_SESSION['autenticado'] = 'N';
     echo ("<script>
       window.alert('Usuário ou senha incorretos!')
-      window.location.href='index.php';
+      window.location.href='login.php';
       </script>");
   }
   $conn->close();
@@ -74,7 +74,7 @@ if (isset($cadastrar)&& !empty($cadastrar))
     
     echo ("<script>
     window.alert('Cadastrado com Sucesso !')
-    window.location.href='index.php';
+    window.location.href='login.php';
     </script>");
   }
 }
@@ -93,7 +93,7 @@ if(isset($addcarrinho) && !empty($addcarrinho))
 
   echo ("<script>
       window.alert('Cadastro realizado com Sucesso!')
-      window.location.href='folhagens.php';
+      window.location.href='produtos.php';
 	    </script>");
 }
 
@@ -114,5 +114,5 @@ if(isset($sair) && !empty($sair))
 {
   session_start();
   session_destroy();
-  header('Location:index.php');
+  header('Location:login.php');
 }

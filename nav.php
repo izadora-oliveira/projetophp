@@ -10,7 +10,7 @@
                     <a class="nav-link active" aria-current="page" href="carrinho.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Carrinho</font></font></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="folhagens.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Produtos</font></font></a>
+                    <a class="nav-link active" aria-current="page" href="produtos.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Produtos</font></font></a>
                 </li>
                 <form action="controller.php" method="POST">
                   <input class="btn btn-dark" type="submit" name="sair" value="Sair" placeholder="Search" aria-label="Search">
