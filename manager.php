@@ -1,5 +1,7 @@
 <?php
 
+$setores = ['Frutas','Folhagens','Verduras','Raizes'];
+
 function getProdutos($setor)
 {
     require "conexao.php";
@@ -21,7 +23,7 @@ function getCarrinho()
     $result = $conn->query($query_);
     $itenscarrinho = array();
     while ($row = $result->fetch_assoc()) {
-    $itenscarrinho[] = [$row['cod_produto'],$row['nome'],$row['preco'],$row['qtd'],$row['subtotal']];
+    $itenscarrinho[] = [$row['cod_produto'],$row['nome'],$row['preco'],$row['quantidade'],$row['subtotal']];
     }
     return $itenscarrinho;
 }

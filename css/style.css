@@ -1,7 +1,10 @@
 /*author:starttemplate*/
 /*reference site : starttemplate.com*/
 body {
-    background-image:url('../imagens/login.png');
+    background-image:url('../imagens/index.png');
+    background-position:center;
+    background-size:cover;
+    
   }
   
   .container {
@@ -13,7 +16,8 @@ body {
       font-size:18px!important;
   }
   .form-login {
-      background-color: rgba(255, 159, 56, 0.8);
+      background-color: rgba(210, 110, 11, 0.55);
+      padding-top: 10px;
       padding-bottom: 20px;
       padding-left: 20px;
       padding-right: 20px;
@@ -22,13 +26,11 @@ body {
       border-width: 5px;
       color:white;
       box-shadow:0 1px 0 #cfcfcf;
-      text-align: left;
   }
   .form-control{
       background:transparent!important;
       color:white!important;
       font-size: 18px!important;
-      border-radius: 10px;
   }
   h1{
       color:white!important;
@@ -40,6 +42,9 @@ body {
    text-align: center;
   }
   
+  .form-control {
+      border-radius: 10px;
+  }
   .text-white{
       color: white!important;
   }

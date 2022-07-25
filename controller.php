@@ -2,15 +2,6 @@
 session_start();
 require("conexao.php");
 
-if(isset($_POST) && !empty($_POST))
-{  
-    foreach( $_POST as $nome_campo => $valor)
-    { 
-       $comando = "$" . $nome_campo . "='" . $valor . "';"; 
-       eval($comando); 
-    }
-}
-
 if (!isset($_SESSION ['authenticated']) && (!isset($entrar)) && (!isset($cadastrar)) )  {
   echo ("<script>
   window.alert('você não esta logado!')
@@ -79,15 +70,17 @@ if (isset($cadastrar)&& !empty($cadastrar))
   }
 }
 
-if(isset($addcarrinho) && !empty($addcarrinho))
+if(isset($_POST['addcarrinho']) && !empty($_POST['addcarrinho']))
 {
   $cod_cli  = $_SESSION['id'];
   $preco = $_POST['preco'];
   $quantidade = $_POST['quantidade'];
+  $cod_produto = $_POST['cod_produto'];
+  $nome = $_POST['nome'];
   $subtotal = $quantidade*$preco;
 
-  $stmt = $conn->prepare("INSERT INTO tbl_carrinho (cod_cli,cod_produto,nome,preco,qtd,subtotal) VALUES (?,?,?,?,?,?)");
-  $stmt->bind_param('iisdid',$cod_cli,$cod,$nome,$preco,$quantidade,$subtotal);
+  $stmt = $conn->prepare("INSERT INTO tbl_carrinho (cod_cli,cod_produto,nome,preco,quantidade,subtotal) VALUES (?,?,?,?,?,?)");
+  $stmt->bind_param('iisdid',$cod_cli,$cod_produto,$nome,$preco,$quantidade,$subtotal);
   $stmt->execute();
   $conn->close();
 
