@@ -36,24 +36,24 @@ include("header.php");
             <form method="post" action="controller.php">
               <?php
               echo "<td name ='cod_produto' class='table-Default'>";
-              echo "<input type='hidden' name='cod_produto' id='cod_produto' value='$item[0]'/>$item[0]";
+              echo "<input type='hidden' name='cod_produto' id='cod_produto' value='$item[cod_produto]'/>$item[cod_produto]";
               echo "</td>";
               echo "<td name='nome' class='table-Default'>";
-              echo "<input type='hidden' name='nome' id='nome' value='$item[1]'/>$item[1]";
+              echo "<input type='hidden' name='nome' id='nome' value='$item[nome]'/>$item[nome]";
               echo "</td>";
               echo "<td name='preco' class='table-Default'>";
-              echo "<input type='hidden' name='preco' id='preco' />R$ $item[2]";
+              echo "<input type='hidden' name='preco' id='preco' />R$ $item[preco]";
               echo "</td>";
               echo "<td name='quantidade' class='table-Default'>";
-              echo "<input type='hidden' name='quantidade' id='quantidade'value='$item[3]'/>$item[3]";
+              echo "<input type='hidden' name='quantidade' id='quantidade'value='$item[quantidade]'/>$item[quantidade]";
               echo "</td>";
               echo "<td name='subtotal' class='table-Default'>";
-              echo "<input type='hidden' name='subtotal' id='subtotal'value='$item[4]'/>R$ $item[4]";
+              echo "<input type='hidden' name='subtotal' id='subtotal'value='$item[subtotal]'/>R$ $item[subtotal]";
               echo "</td>";
               echo "<td name='excluir' class='table-Default'>";
               echo "<input type='submit' name='excluirItemCarrinho' value='Excluir' class='btn btn-danger btn-sm'/>";
               echo "</td>";
-              $total += $item[4];
+              $total += $item['subtotal'];
               ?> 
             </form>
             </tr>
@@ -83,7 +83,7 @@ include("header.php");
           </select>
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Finalizar Pedido</button>
+          <button type="submit" class="btn btn-success">Finalizar Pedido</button>
         </div>
       </form>
       </div>

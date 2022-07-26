@@ -1,18 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Feira Delivery</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
+<html lang="pt-BR">
+    <?php include("header.php"); ?>
     <body>
         <?php 
         include("nav.php");
@@ -34,15 +22,15 @@
                     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                         <?php foreach($itens as $item){ ?>
                         <div class="col mb-5" style="width:13rem;">
-                            <div class="card h-100" >
-                                <!-- Product image-->
+                            <div class="card h-80" >
+                                <!-- imagem produto-->
                                 <img class="card-img-top" src="<?= $item['imagem'] ?>" alt="..." />
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
-                                        <!-- Product name-->
+                                        <!-- nome produto-->
                                         <h5 class="fw-bolder"><?= $item['nome'] ?></h5>
-                                        <!-- Product price-->
+                                        <!-- preco produto-->
                                         R$ <?= $item['preco'] ?>
                                     </div>
                                 </div>
