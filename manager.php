@@ -1,13 +1,13 @@
 <?php
 
-$setores = ['Frutas','Folhagens','Verduras','Raizes'];
+$setores = ['Folhagens','Frutas','Verduras','Raizes'];
 
 function getProdutos($setor)
-{
+{   
     require "conexao.php";
 
     $itens = [];
-    $result = $conn->query("SELECT * FROM `tbl_produtos` WHERE `tipo` = '$setor' ");
+    $result = $conn->query("SELECT * FROM `tbl_produtos` WHERE `setor` = '$setor' ");
     while ($item = $result->fetch_assoc()){
         $itens[] = $item;
     }

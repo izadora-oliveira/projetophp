@@ -1,16 +1,21 @@
 <?php
+
 session_start();
 require("conexao.php");
 
-if (!isset($_SESSION ['authenticated']) && (!isset($entrar)) && (!isset($cadastrar)) )  {
+if (!isset($_SESSION ['authenticated']) && (!isset($_POST['entrar'])) && (!isset($_POST['cadastrar']))) 
+{
   echo ("<script>
-  window.alert('você não esta logado!')
-  window.location.href='login.php';
-</script>");
+        window.alert('você não esta logado!')
+        window.location.href='login.php';
+        </script>");
 }
 
-if (isset($entrar) && !empty($entrar))
+if (isset($_POST['entrar']) && !empty($_POST['entrar']))
 {
+  $email = $_POST['email'];
+  $senha = $_POST['senha'];  
+
   $query_ = "SELECT * FROM usuario WHERE email ='$email' AND senha = '$senha'"; 
   $result = $conn->query($query_);
 
@@ -18,7 +23,7 @@ if (isset($entrar) && !empty($entrar))
   if ($result->num_rows > 0) {
     
     while ($row = $result->fetch_assoc()) {
-      $_SESSION['id'] = $row['id'];
+      $_SESSION['cod_cli'] = $row['cod_cli'];
       $_SESSION['authenticated'] = 'YES';
       header('Location:produtos.php');
     }
@@ -33,8 +38,13 @@ if (isset($entrar) && !empty($entrar))
   $conn->close();
 }
 
-if (isset($cadastrar)&& !empty($cadastrar))
+if (isset($_POST['cadastrar'])&& !empty($_POST['cadastrar']))
 {
+  $nome = $_POST['nome'];
+  $email = $_POST['email'];
+  $senha = $_POST['senha'];
+  $senha2 = $_POST['senha2'];
+
   if($senha != $senha2){ 
     echo ("<script>
     window.alert('Senhas diferentes !')
@@ -72,7 +82,7 @@ if (isset($cadastrar)&& !empty($cadastrar))
 
 if(isset($_POST['addcarrinho']) && !empty($_POST['addcarrinho']))
 {
-  $cod_cli  = $_SESSION['id'];
+  $cod_cli  = $_SESSION['cod_cli'];
   $preco = $_POST['preco'];
   $quantidade = $_POST['quantidade'];
   $cod_produto = $_POST['cod_produto'];
@@ -90,7 +100,7 @@ if(isset($_POST['addcarrinho']) && !empty($_POST['addcarrinho']))
 	    </script>");
 }
 
-if(isset($excluirItemCarrinho) && !empty($excluirItemCarrinho))
+if(isset($_POST['excluirItemCarrinho']) && !empty($_POST['excluirItemCarrinho']))
 {
   $cod_produto  = $_POST["cod_produto"];
 
@@ -103,7 +113,7 @@ if(isset($excluirItemCarrinho) && !empty($excluirItemCarrinho))
       </script>");
 }
 
-if(isset($sair) && !empty($sair))
+if(isset($_POST['sair']) && !empty($_POST['sair']))
 {
   session_start();
   session_destroy();

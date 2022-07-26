@@ -10,24 +10,28 @@ include("header.php");
 <body>
   <?php include("nav.php"); ?>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Código</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Preço</th>
-      <th scope="col">Quantidade</th>
-      <th scope="col">Subtotal</th>
-      <th scope="col">Excluir</th>
-    </tr>
-  </thead>
-  <tbody>
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Subtotal</th>
+            <th scope="col">Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
           <?php
           $total = 0;
           $itenscarrinho = getCarrinho();
           foreach ($itenscarrinho as $item)
           {
-           ?>
+          ?>
             <tr>
             <form method="post" action="controller.php">
               <?php
@@ -57,7 +61,35 @@ include("header.php");
           }
           ?>
         </tbody>
-</table>  
+      </table>  
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+      <form class="row g-3">
+        <div class="col-12">
+          <label for="endereco" class="form-label">Endereço</label>
+          <input type="text" class="form-control" id="endereco">
+        </div>
+        <div class="col-12">
+          <label for="inputState" class="form-label">Forma de Pagamento</label>
+          <select id="inputState" class="form-select">
+            <option></option>
+            <option>Cartão de crédito</option>
+            <option>Cartão de débito</option>
+            <option>Dinheiro</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Finalizar Pedido</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
     
 </body>
 </html>
