@@ -68,11 +68,19 @@ include("header.php");
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-      <form class="row g-3">
+      <form action="controller.php" method="POST" class="row g-3" >
         <div class="col-12">
           <label for="endereco" class="form-label">Endereço</label>
           <input type="text" class="form-control" id="endereco">
         </div>
+          <div class="col">
+          <label for="endereco" class="form-label">Endereço</label>
+            <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+          </div>
+          <div class="col">
+          <label for="endereco" class="form-label">Endereço</label>
+            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+          </div>
         <div class="col-12">
           <label for="inputState" class="form-label">Forma de Pagamento</label>
           <select id="inputState" class="form-select">
@@ -83,7 +91,7 @@ include("header.php");
           </select>
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-success">Finalizar Pedido</button>
+          <input type="submit" name="finalizar_pedido" value="Finalizar Pedido" class="btn btn-success"/>
         </div>
       </form>
       </div>

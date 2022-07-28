@@ -87,17 +87,37 @@ if(isset($_POST['addcarrinho']) && !empty($_POST['addcarrinho']))
   $quantidade = $_POST['quantidade'];
   $cod_produto = $_POST['cod_produto'];
   $nome = $_POST['nome'];
-  $subtotal = $quantidade*$preco;
+  $subtotal = $quantidade * $preco;
 
-  $stmt = $conn->prepare("INSERT INTO tbl_carrinho (cod_cli,cod_produto,nome,preco,quantidade,subtotal) VALUES (?,?,?,?,?,?)");
-  $stmt->bind_param('iisdid',$cod_cli,$cod_produto,$nome,$preco,$quantidade,$subtotal);
-  $stmt->execute();
-  $conn->close();
+  $query_ = "SELECT quantidade,subtotal FROM tbl_carrinho where cod_produto = $cod_produto";
+  $result = $conn->query($query_);
+  if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $quantidade += $row['quantidade'];
+    $subtotal += $row['subtotal'];
 
-  echo ("<script>
-      window.alert('Cadastro realizado com Sucesso!')
-      window.location.href='produtos.php';
-	    </script>");
+    $stmt = $conn->prepare("UPDATE `tbl_carrinho` SET `quantidade`='$quantidade',`subtotal`='$subtotal' WHERE cod_produto = $cod_produto");
+    $stmt->execute();
+    $conn->close();
+
+    echo ("<script>
+            window.alert('Adicionado com Sucesso!')
+            window.location.href='produtos.php';
+            </script>");
+  }
+  else
+  {
+
+    $stmt = $conn->prepare("INSERT INTO tbl_carrinho (cod_cli,cod_produto,nome,preco,quantidade,subtotal) VALUES (?,?,?,?,?,?)");
+    $stmt->bind_param('iisdid',$cod_cli,$cod_produto,$nome,$preco,$quantidade,$subtotal);
+    $stmt->execute();
+    $conn->close();
+
+    echo ("<script>
+        window.alert('Adicionado com Sucesso!')
+        window.location.href='produtos.php';
+        </script>");
+  }
 }
 
 if(isset($_POST['excluirItemCarrinho']) && !empty($_POST['excluirItemCarrinho']))
