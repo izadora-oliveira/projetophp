@@ -28,16 +28,16 @@
                 </br>
                 <form action="controller.php" method="POST">
                 <label for="name">Nome</label>
-                <input type="text" id="nome" name="nome" class="form-control input-sm chat-input" placeholder="" require/>
+                <input type="text" id="nome" name="nome" class="form-control input-sm chat-input" placeholder="" required="require"/>
                 </br></br>
                 <label for="name">Email</label>
-                <input type="email" id="email" name="email" class="form-control input-sm chat-input"/>
+                <input type="email" id="email" name="email" class="form-control input-sm chat-input" required="require"/>
                 </br></br>
                 <label for="name">Senha</label>
-                <input type="password" id="senha" name="senha" class="form-control input-sm chat-input"/>
+                <input type="password" id="senha" name="senha" class="form-control input-sm chat-input" required="require"/>
                 </br></br>
                 <label for="name">Repetir Senha</label>
-                <input type="password" id="senha2" name="senha2" class="form-control input-sm chat-input"/>
+                <input type="password" id="senha2" name="senha2" class="form-control input-sm chat-input" required="require"/>
                 </br></br>
                 <div class="wrapper">
                 <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-success btn-md">

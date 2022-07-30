@@ -1,18 +1,9 @@
 <?php
-
-session_start();
 require("conexao.php");
-
-if (!isset($_SESSION ['authenticated']) && (!isset($_POST['entrar'])) && (!isset($_POST['cadastrar']))) 
-{
-  echo ("<script>
-        window.alert('você não esta logado!')
-        window.location.href='login.php';
-        </script>");
-}
 
 if (isset($_POST['entrar']) && !empty($_POST['entrar']))
 {
+  session_start();
   $email = $_POST['email'];
   $senha = $_POST['senha'];  
 
@@ -25,7 +16,7 @@ if (isset($_POST['entrar']) && !empty($_POST['entrar']))
     while ($row = $result->fetch_assoc()) {
       $_SESSION['cod_cli'] = $row['cod_cli'];
       $_SESSION['authenticated'] = 'YES';
-      header('Location:produtos.php');
+      header('Location:setores.php');
     }
     
   }else{
@@ -40,6 +31,7 @@ if (isset($_POST['entrar']) && !empty($_POST['entrar']))
 
 if (isset($_POST['cadastrar'])&& !empty($_POST['cadastrar']))
 {
+  session_start();
   $nome = $_POST['nome'];
   $email = $_POST['email'];
   $senha = $_POST['senha'];
@@ -82,6 +74,7 @@ if (isset($_POST['cadastrar'])&& !empty($_POST['cadastrar']))
 
 if(isset($_POST['addcarrinho']) && !empty($_POST['addcarrinho']))
 {
+  session_start();
   $cod_cli  = $_SESSION['cod_cli'];
   $preco = $_POST['preco'];
   $quantidade = $_POST['quantidade'];
@@ -102,7 +95,7 @@ if(isset($_POST['addcarrinho']) && !empty($_POST['addcarrinho']))
 
     echo ("<script>
             window.alert('Adicionado com Sucesso!')
-            window.location.href='produtos.php';
+            window.location.href='setores.php';
             </script>");
   }
   else
@@ -115,13 +108,14 @@ if(isset($_POST['addcarrinho']) && !empty($_POST['addcarrinho']))
 
     echo ("<script>
         window.alert('Adicionado com Sucesso!')
-        window.location.href='produtos.php';
+        window.location.href='setores.php';
         </script>");
   }
 }
 
 if(isset($_POST['excluirItemCarrinho']) && !empty($_POST['excluirItemCarrinho']))
 {
+  session_start();
   $cod_produto  = $_POST["cod_produto"];
 
   $query_ = "DELETE FROM `tbl_carrinho` WHERE `cod_produto` = $cod_produto";
@@ -138,4 +132,56 @@ if(isset($_POST['sair']) && !empty($_POST['sair']))
   session_start();
   session_destroy();
   header('Location:login.php');
+}
+
+if(isset($_POST['finalizar_pedido']) && !empty($_POST['finalizar_pedido']))
+{
+  include_once("manager.php");
+  session_start();
+
+  $cod_cli = $_SESSION['cod_cli'];
+  $cep = $_POST['cep'];
+  $numero = $_POST['numero'];
+  $rua = $_POST['rua'];
+  $bairro = $_POST['bairro'];
+  $celular = $_POST['celular'];
+  $forma_pagamento = $_POST['forma_pagamento'];
+  $dthr_cadastro = date('Y-m-d  h:i:s');
+  
+    
+  $stmt = $conn->prepare("INSERT INTO meus_pedidos (cod_cli,cep,numero,rua,bairro,celular,forma_pagamento,dthr_cadastro) VALUES (?,?,?,?,?,?,?,?)");
+  $stmt->bind_param("isisssss",$cod_cli,$cep,$numero,$rua,$bairro,$celular,$forma_pagamento,$dthr_cadastro);
+  $stmt->execute();
+
+  $query_ = "SELECT cod_pedido FROM meus_pedidos WHERE cod_cli ='$cod_cli' AND dthr_cadastro = '$dthr_cadastro'"; 
+  $result = $conn->query($query_);
+
+  if ($result->num_rows > 0)
+  {    
+    $row = $result->fetch_assoc();
+    $cod_pedido = $row['cod_pedido'];
+  }  
+
+  $total = 0;
+  $itenscarrinho = getCarrinho();
+  foreach ($itenscarrinho as $item)
+  {
+    $total += $item['subtotal'];
+
+    $stmt = $conn->prepare("INSERT INTO itens_pedido (cod_pedido,cod_produto,nome,preco,quantidade,subtotal) VALUES (?,?,?,?,?,?)");
+    $stmt->bind_param("iisdid",$cod_pedido,$item['cod_produto'],$item['nome'],$item['preco'],$item['quantidade'],$item['subtotal']);
+    $stmt->execute();
+
+    $query_ = "DELETE FROM `tbl_carrinho` WHERE `cod_produto` = $item[cod_produto] ";
+    $result = $conn->query($query_);
+  }
+
+  $stmt = $conn->prepare("UPDATE `meus_pedidos` SET `total`='$total' WHERE cod_pedido = $cod_pedido");
+  $stmt->execute();
+  $conn->close();
+
+  echo ("<script>
+          window.alert('Pedido cadastrado com Sucesso!')
+          window.location.href='meusPedidos.php';
+      </script>");
 }

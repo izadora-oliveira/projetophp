@@ -6,10 +6,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="produtos.php">Todos Produtos</a>
+                    <a class="nav-link active" aria-current="page" href="setores.php">Setores</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="meus_pedidos.php">Meus Pedidos</a>
+                    <a class="nav-link active" aria-current="page" href="meusPedidos.php">Meus Pedidos</a>
                 </li>
                 <li class="nav-item">
                     <form action="controller.php" method="POST">
@@ -18,7 +18,7 @@
                 </li>
             </ul>
 
-            <a class="btn btn-outline-dark" href="carrinho.php" role="button"><i class="bi-cart-fill me-1"></i>Carrinho</a>                
+            <a class="btn btn-outline-success" href="carrinho.php" role="button"><i class="bi-cart-fill me-1"></i>Carrinho</a>                
         </div>
     </div>
 </nav>

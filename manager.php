@@ -1,4 +1,5 @@
 <?php
+require("controller.php");
 
 $setores = ['Folhagens','Frutas','Verduras','Raizes'];
 

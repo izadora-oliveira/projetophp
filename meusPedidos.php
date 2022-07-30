@@ -1,4 +1,7 @@
-<?php include("controller.php") ?>
+<?php
+require("validarAcesso.php");
+include("controller.php");
+?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">

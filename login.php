@@ -30,9 +30,9 @@
               <div class="form-login"></br>
                 <h4>Entrar</h4>
                 </br>
-                <input type="email" name="email" id="email" class="form-control input-sm chat-input" placeholder="Email"/>
+                <input type="email" name="email" id="email" class="form-control input-sm chat-input" placeholder="Email" required="require"/>
                 </br></br>
-                <input type="password" name="senha" id="senha" class="form-control input-sm chat-input" placeholder="Senha"/>
+                <input type="password" name="senha" id="senha" class="form-control input-sm chat-input" placeholder="Senha" required="require"/>
                 </br></br>
                 <div class="wrapper">
                     <input type="submit" name="entrar" value="Entrar" class="btn btn-success"/>
