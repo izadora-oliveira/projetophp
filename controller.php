@@ -15,6 +15,7 @@ if (isset($_POST['entrar']) && !empty($_POST['entrar']))
     
     while ($row = $result->fetch_assoc()) {
       $_SESSION['cod_cli'] = $row['cod_cli'];
+      $_SESSION['nome'] = $row['nome'];
       $_SESSION['authenticated'] = 'YES';
       header('Location:setores.php');
     }
@@ -80,6 +81,7 @@ if(isset($_POST['addcarrinho']) && !empty($_POST['addcarrinho']))
   $quantidade = $_POST['quantidade'];
   $cod_produto = $_POST['cod_produto'];
   $nome = $_POST['nome'];
+  $setor = $_POST['setor'];
   $subtotal = $quantidade * $preco;
 
   $query_ = "SELECT quantidade,subtotal FROM tbl_carrinho where cod_produto = $cod_produto";
@@ -95,7 +97,7 @@ if(isset($_POST['addcarrinho']) && !empty($_POST['addcarrinho']))
 
     echo ("<script>
             window.alert('Adicionado com Sucesso!')
-            window.location.href='setores.php';
+            window.location.href='setor.php?setor=$setor';
             </script>");
   }
   else
@@ -108,7 +110,7 @@ if(isset($_POST['addcarrinho']) && !empty($_POST['addcarrinho']))
 
     echo ("<script>
         window.alert('Adicionado com Sucesso!')
-        window.location.href='setores.php';
+        window.location.href='setor.php?setor=$setor';
         </script>");
   }
 }

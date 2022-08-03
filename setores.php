@@ -20,26 +20,22 @@ require("validarAcesso.php");
             <?php 
             include_once("manager.php");
             foreach($setores as $setor){ ?>
-            <div class="col mb-5" style="width:13rem;">
+            <div class="col mb-5" style="width:17rem;">
                 <div class="card h-100" >
                     <!-- imagem produto-->
-                    <img class="card-img-top" src="..." alt="..." />
+                    <img class="card-img-top" src="imagens\<?= $setor ?>\<?= $setor ?>.jpg" alt="..." />
                     <!-- Product details-->
                     <form action="setor.php" method="GET">
                     <div class="card-body">
                         <div class="text-center">
                             <!-- nome produto-->
-                            <h5 class="fw-bolder"><?= $setor ?></h5>
-                            <!-- preco produto-->
-                            R$ <?= $item['preco'] ?>
+                            <h5 class="fw-bolder"><?= $setor ?></h5>                            
                         </div>
                     </div>                                
                     <!-- Product actions-->
                     <div class="card-footer pt-0 border-top-0 bg-transparent">
-                        <input type="hidden" name="cod_produto" id="cod_produto" value="<?= $item['cod_produto'] ?>"/>
-                        <input type="hidden" name="nome" id="nome" value="<?= $item['nome'] ?>"/>
-                        <input type="hidden" name="preco" id="preco" value="<?= $item['preco'] ?>"/>
-                        <input class="btn btn-success" type="submit" name="addcarrinho" value="Adicionar"/>
+                        <input type="hidden" name="setor" value="<?= $setor ?>"/>
+                        <input class="btn btn-success" type="submit" value="Entrar"/>
                     </div>
                     </form>
                 </div>

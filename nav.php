@@ -8,17 +8,26 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="setores.php">Setores</a>
                 </li>
+                <?php 
+                include_once("manager.php");
+                foreach($setores as $setor){ ?>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="setor.php?setor=<?= $setor ?>"><?= $setor ?></a>
+                </li>
+                <?php } ?>                
+                
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="meusPedidos.php">Meus Pedidos</a>
                 </li>
-                <li class="nav-item">
-                    <form action="controller.php" method="POST">
-                    <input class="dropdown-item" type="submit" name="sair" value="Sair">
-                  </form>
-                </li>
-            </ul>
-
-            <a class="btn btn-outline-success" href="carrinho.php" role="button"><i class="bi-cart-fill me-1"></i>Carrinho</a>                
+           </ul>
+            <div class="me-4">
+                <a class="btn btn-outline-success" href="carrinho.php" role="button"><i class="bi-cart-fill me-1"></i>Carrinho</a>
+            </div>
+            <div class="me-4">
+                <form action="controller.php" method="POST">
+                <input class="btn btn-outline-danger" type="submit" name="sair" value="Sair">
+                </form>
+            </div>
         </div>
     </div>
 </nav>

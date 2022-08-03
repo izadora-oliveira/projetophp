@@ -17,7 +17,7 @@ include("header.php");
       <div class="col-sm-6">
         <div class="card">
           <div class="card-body">
-          <table class="table">
+          <table class="table border-success">
             <thead>
               <tr>
                 <th scope="col">Código</th>
@@ -69,7 +69,7 @@ include("header.php");
         </div>
       </div>
       <div class="col-sm-6">
-        <div class="card">
+        <div class="card border-success">
           <div class="card-body">
           <form action="controller.php" method="POST" class="row g-3" >
           
