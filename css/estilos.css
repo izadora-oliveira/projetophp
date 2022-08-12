@@ -1,0 +1,13 @@
+  .container-flex {
+    display: grid;
+    /* aqui eu determino é são 3 colunas de tamanhos iguas, cada coluna tem uma fração */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* esssa é a altura das linhas, se vc quiser pode apaga-la caso não queira uma altura definida */
+    grid-auto-rows: 250px;
+    /* espaço entre um elemento interno e outro */
+    grid-gap: 10px 30px;
+    /* margem interna que afasta os elementos da borda do grid */
+    padding: 20px 10px;
+  }
+
+  

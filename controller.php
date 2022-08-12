@@ -187,3 +187,19 @@ if(isset($_POST['finalizar_pedido']) && !empty($_POST['finalizar_pedido']))
           window.location.href='meusPedidos.php';
       </script>");
 }
+
+if(isset($_POST['deletePedido']) && !empty($_POST['deletePedido']))
+{
+  $cod_pedido  = $_POST['cod_pedido'];
+
+  $query_ = "DELETE FROM `meus_pedidos` WHERE `cod_pedido` = $cod_pedido";
+  $result = $conn->query($query_);
+
+  $query_ = "DELETE FROM `itens_pedido` WHERE `cod_pedido` = $cod_pedido";
+  $result = $conn->query($query_);
+
+  echo ("<script>
+      window.alert('Pedido Excluido!')
+      window.location.href='meusPedidos.php';
+      </script>");
+}
