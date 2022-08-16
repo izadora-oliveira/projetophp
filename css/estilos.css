@@ -10,4 +10,13 @@
     padding: 20px 10px;
   }
 
+  .button-detalhes {
+    background-color: green;
+    border: none;
+    font-size: larger;
+    color: white;
+    box-shadow: 0 0 1em black;
+    border-radius: 5px;
+  }
+
   

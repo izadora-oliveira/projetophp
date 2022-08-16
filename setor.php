@@ -18,6 +18,24 @@ require("controller.php");
             <div class="text-center text-white">
                 <h1 class="display-5 fw-bolder"><?= $_GET['setor'] ?></h1>
             </div>
+            <script type="text/javascript">
+                function id( el )
+                {
+                    return document.getElementById( el );
+                }
+                window.onload = function()
+                {
+                    id('mais').onclick = function()
+                    {
+                        id('format').value = parseInt( id('format').value )+1;
+                    }
+                    id('menos').onclick = function()
+                    {
+                        if( id('format').value>0 )
+                        id('format').value = parseInt( id('format').value )-1;
+                    }
+                }       
+            </script>
         </header>
         <!-- Section-->
         <section class="py-1">
@@ -37,8 +55,9 @@ require("controller.php");
                                     <!-- preco produto-->
                                     R$ <?= $item['preco'] ?>
                                 </div>
-                                <label>Quantidade</label>
-                                <input class="form-control" type="number" name="quantidade" id="quantidade" />
+                                <input type="button" name="menos" id="menos" value="-" />
+                                <input type="text" name="format" value="0" id="format" size="2" />
+                                <input type="button" name="mais" id="mais" value="+" />
                             </div>                                
                             <!-- Product actions-->
                             <div class="card-footer pt-0 border-top-0 bg-transparent">

@@ -19,7 +19,7 @@ include("manager.php");
             foreach($info_pedido as $info)
             { ?>
                 <div class="accordion" id="accordionExample">
-                    <div class="accordion-item card l-bg-green">           
+                    <div class="accordion-item card l-bg-orange">           
 
                         <div class="col-xl-12 col-lg-6">
                             <div class="card-statistic-3 p-4">                                  
@@ -37,7 +37,7 @@ include("manager.php");
                                     </div>
                                 </div>
                                 <h6 class="accordion-header" id="heading<?= $i; ?>" style="width: 10rem;">
-                                    <button class="ccordion-button <?= ($i>0) ? 'collapsed' : ''; ?>"
+                                    <button class="button-detalhes ccordion-button <?= ($i>0) ? 'collapsed' : ''; ?>"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapse<?= $i; ?>"
