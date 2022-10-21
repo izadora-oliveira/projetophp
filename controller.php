@@ -24,7 +24,7 @@ if (isset($_POST['entrar']) && !empty($_POST['entrar']))
     $_SESSION['autenticado'] = 'N';
     echo ("<script>
       window.alert('Usuário ou senha incorretos!')
-      window.location.href='login.php';
+      window.location.href='index.php';
       </script>");
   }
   $conn->close();
@@ -68,7 +68,7 @@ if (isset($_POST['cadastrar'])&& !empty($_POST['cadastrar']))
     
     echo ("<script>
     window.alert('Cadastrado com Sucesso !')
-    window.location.href='login.php';
+    window.location.href='index.php';
     </script>");
   }
 }
@@ -78,7 +78,7 @@ if(isset($_POST['addcarrinho']) && !empty($_POST['addcarrinho']))
   session_start();
   $cod_cli  = $_SESSION['cod_cli'];
   $preco = $_POST['preco'];
-  $quantidade = $_POST['quantidade'];
+  $quantidade = $_POST['qtd'.$_POST['cod_produto']];
   $cod_produto = $_POST['cod_produto'];
   $nome = $_POST['nome'];
   $setor = $_POST['setor'];
@@ -133,7 +133,7 @@ if(isset($_POST['sair']) && !empty($_POST['sair']))
 {
   session_start();
   session_destroy();
-  header('Location:login.php');
+  header('Location:index.php');
 }
 
 if(isset($_POST['finalizar_pedido']) && !empty($_POST['finalizar_pedido']))

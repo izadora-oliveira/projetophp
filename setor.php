@@ -18,24 +18,7 @@ require("controller.php");
             <div class="text-center text-white">
                 <h1 class="display-5 fw-bolder"><?= $_GET['setor'] ?></h1>
             </div>
-            <script type="text/javascript">
-                function id( el )
-                {
-                    return document.getElementById( el );
-                }
-                window.onload = function()
-                {
-                    id('mais').onclick = function()
-                    {
-                        id('format').value = parseInt( id('format').value )+1;
-                    }
-                    id('menos').onclick = function()
-                    {
-                        if( id('format').value>0 )
-                        id('format').value = parseInt( id('format').value )-1;
-                    }
-                }       
-            </script>
+            
         </header>
         <!-- Section-->
         <section class="py-1">
@@ -47,26 +30,27 @@ require("controller.php");
                             <!-- imagem produto-->
                             <img class="card-img-top" src="<?= $item['imagem'] ?>" alt="..." />
                             <!-- Product details-->
-                            <form action="controller.php" method="POST">
-                            <div class="card-body">
-                                <div class="text-center">
-                                    <!-- nome produto-->
-                                    <h5 class="fw-bolder"><?= $item['nome'] ?></h5>
-                                    <!-- preco produto-->
-                                    R$ <?= $item['preco'] ?>
+                            <form action="controller.php" method="post">
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <!-- nome produto-->
+                                        <h5 class="fw-bolder"><?= $item['nome'] ?></h5>
+                                        <!-- preco produto-->
+                                        R$ <?= $item['preco'] ?>
+                                    </div>
+                                    <input type="button" id="<?=$item['cod_produto']?>" value="-" onclick="retirar(this.id)"/>
+                                    <input type="number" min="0" value="0" name="qtd<?=$item['cod_produto']?>" id="qtd<?=$item['cod_produto']?>" style="width:40%;"/>
+                                    <input type="hidden" id="cod_produto" value="<?=$item['cod_produto']?>" />
+                                    <input type="button" id="<?=$item['cod_produto']?>" value="+" onclick="add(this.id)"/>
+                                </div>                                
+                                <!-- -->
+                                <div class="card-footer pt-0 border-top-0 bg-transparent">
+                                    <input type="hidden" name="cod_produto" value="<?= $item['cod_produto'] ?>"/>
+                                    <input type="hidden" name="nome" value="<?= $item['nome'] ?>"/>
+                                    <input type="hidden" name="preco" value="<?= $item['preco'] ?>"/>
+                                    <input type="hidden" name="setor" value="<?= $item['setor'] ?>"/>
+                                    <input class="btn btn-success" type="submit" name="addcarrinho" value="incluir"></input>
                                 </div>
-                                <input type="button" name="menos" id="menos" value="-" />
-                                <input type="text" name="format" value="0" id="format" size="2" />
-                                <input type="button" name="mais" id="mais" value="+" />
-                            </div>                                
-                            <!-- Product actions-->
-                            <div class="card-footer pt-0 border-top-0 bg-transparent">
-                                <input type="hidden" name="cod_produto" id="cod_produto" value="<?= $item['cod_produto'] ?>"/>
-                                <input type="hidden" name="nome" id="nome" value="<?= $item['nome'] ?>"/>
-                                <input type="hidden" name="preco" id="preco" value="<?= $item['preco'] ?>"/>
-                                <input type="hidden" name="setor" id="setor" value="<?= $item['setor'] ?>"/>
-                                <input class="btn btn-success" type="submit" name="addcarrinho" value="incluir"></input>
-                            </div>
                             </form>
                         </div>
                     </div>
@@ -76,8 +60,19 @@ require("controller.php");
         </section>
         
         <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        
+        <script type="text/javascript">
+            function id_elemento( el )
+            {
+                return document.getElementById( el );
+            }
+            function retirar(id){
+                if( id_elemento('qtd'+id).value >0 )
+                id_elemento('qtd'+id).value = parseInt( id_elemento('qtd'+id).value )-1;
+            }
+            function add(id){
+                id_elemento('qtd'+id).value = parseInt( id_elemento('qtd'+id).value )+1;
+            }
+        </script>
     </body>
 </html>
