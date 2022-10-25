@@ -1,8 +1,6 @@
 <?php 
-require("validarAcesso.php");
 require("controller.php");
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
     <?php include("header.php"); ?>
